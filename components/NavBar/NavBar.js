@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import Image from "next/image";
 import styles from "../../styles/NavBar.module.css";
 import Link from "next/link";
@@ -10,15 +10,22 @@ const NavBar = () => {
   return (
     <div className={styles.navbar}>
       <div className={styles.leftSide}>
-        <div className={styles.navLogo}>
-          <Image
-            src="/images/logo.png"
-            alt="logo image"
-            className={styles.logo}
-            width={70}
-            height={70}
-          />
-        </div>
+        <Link href={"/"}>
+          <div className={styles.navLogo}>
+            <Image
+              src="/images/logo.png"
+              alt="logo image"
+              className={styles.logo}
+              width={70}
+              height={70}
+            />
+          </div>
+        </Link>
+        <Link href={"/"}>
+          <div className={styles.navText}>
+            <h2>MIRMEDIA.BG</h2>
+          </div>
+        </Link>
       </div>
       <div className={styles.rightSide}>
         <div className={styles.links}>

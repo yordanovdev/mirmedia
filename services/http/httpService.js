@@ -1,20 +1,11 @@
 import axios from "axios";
+import https from "https";
 
-const baseHttp = axios.create({
-  baseURL: process.env.BACKEND_URL,
+const http = axios.create({
+  baseURL: process.env.NEXT_PUBLIC_BACKEND_URL,
+  httpsAgent: new https.Agent({
+    rejectUnauthorized: false,
+  }),
 });
 
-
-baseHttp.interceptors.request.use(function (config) {
-    return config;
-  }, function (error) {
-    return Promise.reject(error);
-  });
-
-baseHttp.interceptors.response.use(function (response) {
-    return response;
-  }, function (error) {
-    return Promise.reject(error);
-  });
-
-export default baseHttp;
+export default http;
