@@ -108,6 +108,15 @@
   margin-left: 0.5rem;
 }
 
+.posts {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 80px 50px;
+}
+
 @media (max-width: 600px) {
   .grid {
     width: 100%;
@@ -126,4 +135,67 @@
   .logo img {
     filter: invert(1);
   }
+}
+
+.aboutUs {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  background-color: #5e17eb;
+  padding: 30px 0px;
+}
+
+.aboutUs h1 {
+  width: fit-content;
+  color: white;
+  letter-spacing: 2px;
+  font-weight: 500;
+  padding: 5px 10px;
+  border-left: 3px solid white;
+  border-bottom: 3px solid white;
+  margin: 0 10%;
+}
+
+.people {
+  display: grid;
+  grid-template-columns: auto auto;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20%;
+  margin: 0 10%;
+}
+
+.person h2,
+.person h3 {
+  transform: translateY(-50px);
+  padding: 0 20px;
+  color: white;
+  transition: all 500ms ease-in-out;
+}
+
+.person img {
+  filter: none;
+  border-radius: 5px;
+  transition: all 500ms ease-in-out;
+}
+
+.person h3 {
+  opacity: 0%;
+  font-weight: 300;
+  font-size: 16px;
+  transform: translateY(-60px);
+  max-width: 300px;
+}
+
+.person:hover h2 {
+  transform: translateY(-100px);
+}
+
+.person:hover h3 {
+  opacity: 100%;
+  transform: translateY(-95px);
+}
+
+.person:hover img {
+  filter: brightness(0.4);
 }

@@ -1,0 +1,26 @@
+.main {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 30vw;
+  cursor: pointer;
+}
+
+.main h2 {
+  color: blue;
+  letter-spacing: 1.5px;
+}
+
+.main img {
+  border-radius: 5px;
+}
+
+.dateTime {
+  color: blue;
+  letter-spacing: 2px;
+}
+
+.dateTime i {
+  margin-right: 5px;
+}
