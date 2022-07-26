@@ -110,11 +110,11 @@
 
 .posts {
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: repeat(3, 1fr);
   align-items: center;
   justify-content: center;
   gap: 20px;
-  padding: 80px 50px;
+  padding: 80px 70px;
 }
 
 @media (max-width: 600px) {
