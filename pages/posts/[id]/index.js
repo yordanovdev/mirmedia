@@ -1,16 +1,19 @@
-import { useRouter } from "next/router";
-import Script from "next/script";
 import React, { useEffect, useState } from "react";
-import http from "../../services/http/httpService";
+import http from "../../../services/http/httpService";
 import { useQuill } from "react-quilljs";
+import styles from "../../../styles/PostDetails.module.css";
+import { useRouter } from "next/router";
+import Link from "next/link";
 
 const PostDetails = ({ data }) => {
   const { title, creationTime, content } = data;
   const { quill, quillRef } = useQuill();
-  const [text, setText] = useState("");
+  const [text, setText] = useState(content);
+  const router = useRouter();
 
   useEffect(() => {
     if (quill) {
+      quill.clipboard.dangerouslyPasteHTML(text);
       quill.on("text-change", () => {
         setText(quill.root.innerHTML); // Get text only
       });
@@ -18,29 +21,24 @@ const PostDetails = ({ data }) => {
   }, [quill]);
 
   return (
-    <div>
-      {/* <h1>{title}</h1>
-      <p>{new Date(creationTime).toLocaleDateString()}</p>
-      
+    <div className={styles.main}>
+      <h2 className={styles.title}>{title}</h2>
+
+      <p className={styles.creationTime}>
+        Published on <span>{new Date(creationTime).toLocaleDateString()}</span>
+      </p>
+
+      <hr className={styles.hr} />
+
       <div
-        dangerouslySetInnerHTML={{
-          __html: content,
-        }}
-      /> */}
-      <div style={{ width: 500, height: 300 }}>
-        <div ref={quillRef} />
-      </div>
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <div
-      className="ql-editor"
+        className="ql-editor"
         dangerouslySetInnerHTML={{
           __html: text,
         }}
       />
+      <Link href={router.asPath + "/edit"}>
+        <button className={styles.editBtn}>Edit</button>
+      </Link>
     </div>
   );
 };

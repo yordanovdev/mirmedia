@@ -177,6 +177,7 @@
   filter: none;
   border-radius: 5px;
   transition: all 500ms ease-in-out;
+  object-position: top;
 }
 
 .person h3 {

@@ -1,0 +1,18 @@
+.main {
+  padding: 35px;
+  gap: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.saveBtn {
+  background-color: #031690;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  font-size: 17px;
+  letter-spacing: 2px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: none;
+}

@@ -1,0 +1,31 @@
+.main {
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.creationTime span {
+  color: #031690;
+  font-weight: 500;
+}
+
+.title {
+  color: #031690;
+}
+
+.editBtn {
+  background-color: #031690;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  font-size: 17px;
+  letter-spacing: 2px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: none;
+}
+
+.hr {
+  margin: 15px 0px;
+}

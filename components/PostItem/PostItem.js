@@ -3,7 +3,7 @@ import Image from "next/image";
 import styles from "../../styles/PostItem.module.css";
 import Link from "next/link";
 
-const PostItem = ({ data: { title, content, creationTime, id } }) => {
+const PostItem = ({ data: { title, creationTime, id, description } }) => {
   return (
     <Link href={"/posts/" + id}>
       <div className={styles.main}>
@@ -13,7 +13,7 @@ const PostItem = ({ data: { title, content, creationTime, id } }) => {
           <i className="fa-regular fa-clock"></i>
           {new Date(creationTime).toLocaleDateString()}
         </p>
-        <p>{content.substring(0, 100)}...</p>
+        <p>{description?.substring(0, 100)}...</p>
       </div>
     </Link>
   );
