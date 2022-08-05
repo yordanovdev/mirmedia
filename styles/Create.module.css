@@ -1,0 +1,45 @@
+.create {
+  background-color: white;
+  border-radius: 5px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.segment {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.input {
+  background-color: rgba(198, 198, 198, 0.344);
+  padding: 8px 15px;
+  border: none;
+  border-radius: 3px;
+  min-width: 200px;
+}
+
+.input::placeholder {
+  letter-spacing: 2px;
+  color: rgba(128, 128, 128, 0.587);
+}
+
+.preview {
+  margin-top: 10px;
+  object-fit: cover;
+}
+
+.btn {
+  background-color: #5e17eb;
+  color: white;
+  width: fit-content;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #4d0dcc;
+}

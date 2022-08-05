@@ -6,8 +6,8 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 
 const PostDetails = ({ data }) => {
-  const { title, creationTime, content } = data;
-  const { quill, quillRef } = useQuill();
+  const { title, creationTime, content, imageUrl } = data;
+  const { quill } = useQuill();
   const [text, setText] = useState(content);
   const router = useRouter();
 
@@ -21,24 +21,28 @@ const PostDetails = ({ data }) => {
   }, [quill]);
 
   return (
-    <div className={styles.main}>
-      <h2 className={styles.title}>{title}</h2>
+    <div className={styles.post}>
+      <div className={styles.main}>
+        <img src={imageUrl ?? ""} alt={title} className={styles.image} />
+        <h1 className={styles.title}>{title}</h1>
 
-      <p className={styles.creationTime}>
-        Published on <span>{new Date(creationTime).toLocaleDateString()}</span>
-      </p>
+        <p className={styles.creationTime}>
+          Published on{" "}
+          <span>{new Date(creationTime).toLocaleDateString()}</span>
+        </p>
 
-      <hr className={styles.hr} />
+        <hr className={styles.hr} />
 
-      <div
-        className="ql-editor"
-        dangerouslySetInnerHTML={{
-          __html: text,
-        }}
-      />
-      <Link href={router.asPath + "/edit"}>
-        <button className={styles.editBtn}>Edit</button>
-      </Link>
+        <div
+          className="ql-editor"
+          dangerouslySetInnerHTML={{
+            __html: text,
+          }}
+        />
+        <Link href={router.asPath + "/edit"}>
+          <button className={styles.editBtn}>Edit</button>
+        </Link>
+      </div>
     </div>
   );
 };
