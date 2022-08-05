@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "../../styles/MainLayout.module.css";
+import Footer from "../Footer/Footer";
 import NavBar from "../NavBar/NavBar";
 
 const MainLayout = ({ children }) => {
@@ -7,6 +8,10 @@ const MainLayout = ({ children }) => {
     <div className={styles.main}>
       <NavBar />
       <div className={styles.content}>{children}</div>
+      <br />
+      <br />
+      <br />
+      <Footer />
     </div>
   );
 };
