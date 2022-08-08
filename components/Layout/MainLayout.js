@@ -7,8 +7,12 @@ const MainLayout = ({ children }) => {
   return (
     <div className={styles.main}>
       <NavBar />
-      <div className={styles.content}>{children}</div>
       <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <div className={styles.content}>{children}</div>
       <Footer />
     </div>
   );

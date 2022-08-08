@@ -1,7 +1,7 @@
 import React from "react";
-import PostItem from "../components/PostItem/PostItem";
-import http from "../services/http/httpService";
-import styles from "../styles/Blog.module.css";
+import PostItem from "../../components/PostItem/PostItem";
+import http from "../../services/http/httpService";
+import styles from "../../styles/Blog.module.css";
 
 export default function Blog({ data }) {
   return (

@@ -56,7 +56,7 @@ const links = [
   },
   {
     text: "За нас",
-    to: "/about",
+    to: "/about-us",
   },
   {
     text: "Контакти",
