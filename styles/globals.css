@@ -20,6 +20,11 @@ a {
   font-family: "Roboto", sans-serif;
 }
 
+body {
+  overflow-x: hidden;
+  width: 100vw;
+}
+
 .ql-editor {
   padding: 0px !important;
 }

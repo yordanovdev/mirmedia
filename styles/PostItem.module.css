@@ -27,7 +27,12 @@
 
 @media screen and (max-width: 950px) {
   .main {
-    max-width: 100%;
     max-width: min-content;
+  }
+}
+
+@media screen and (max-width: 570px) {
+  .main img {
+    max-width: 300px;
   }
 }
