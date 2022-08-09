@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import Image from "next/image";
 import styles from "../../styles/NavBar.module.css";
 import Link from "next/link";
@@ -7,6 +7,10 @@ import { useRouter } from "next/router";
 const NavBar = () => {
   const [open, setOpen] = useState(false);
   const router = useRouter();
+
+  useEffect(() => {
+    setOpen(false);
+  }, [router.pathname]);
 
   return (
     <div className={styles.navbar}>
