@@ -2,7 +2,9 @@ import React from "react";
 import styles from "../../styles/PostItem.module.css";
 import Link from "next/link";
 
-const PostItem = ({ data: { title, creationTime, id, description, imageUrl } }) => {
+const PostItem = ({
+  data: { title, creationTime, id, description, imageUrl },
+}) => {
   return (
     <Link href={"/posts/" + id}>
       <div className={styles.main}>
