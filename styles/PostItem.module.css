@@ -24,3 +24,10 @@
 .dateTime i {
   margin-right: 5px;
 }
+
+@media screen and (max-width: 950px) {
+  .main {
+    max-width: 100%;
+    max-width: min-content;
+  }
+}

@@ -110,7 +110,7 @@
 
 .posts {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr 1fr 1fr;
   justify-content: center;
   gap: 20px;
   padding: 80px 70px;
@@ -198,4 +198,25 @@
 
 .person:hover img {
   filter: brightness(0.4);
+}
+
+@media screen and (max-width: 950px) {
+  .posts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .posts img {
+    width: 450px;
+  }
+
+  .people {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 }

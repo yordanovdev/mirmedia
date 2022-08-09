@@ -1,10 +1,11 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
 import Image from "next/image";
 import styles from "../../styles/NavBar.module.css";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
 const NavBar = () => {
+  const [open, setOpen] = useState(false);
   const router = useRouter();
 
   return (
@@ -28,7 +29,10 @@ const NavBar = () => {
         </Link>
       </div>
       <div className={styles.rightSide}>
-        <div className={styles.links}>
+        <div className={`${styles.links} ${open && styles.open}`}>
+          <button onClick={() => setOpen(false)} className={styles.closeBtn}>
+            <i className="fa fa-close" />
+          </button>
           {links.map((link) => (
             <Link href={link.to} key={link.text}>
               <p className={styles.link}>{link.text}</p>
@@ -38,6 +42,9 @@ const NavBar = () => {
         <div className={styles.actions}>
           <button className={styles.volunteerBtn}>Стани Член</button>
         </div>
+        <button onClick={() => setOpen(true)} className={styles.openBtn}>
+          <i className="fa fa-bars" />
+        </button>
       </div>
     </div>
   );
