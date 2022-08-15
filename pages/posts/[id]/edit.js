@@ -35,6 +35,7 @@ const EditPost = ({ data }) => {
       })
       .then(() => {
         router.back();
+        
       });
   };
 
