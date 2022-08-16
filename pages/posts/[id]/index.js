@@ -4,14 +4,18 @@ import { useQuill } from "react-quilljs";
 import styles from "../../../styles/PostDetails.module.css";
 import { useRouter } from "next/router";
 import Link from "next/link";
+import { useAuth } from "../../../services/auth/useAuth";
 
 const PostDetails = ({ data }) => {
   const { title, creationTime, content, imageUrl } = data;
+  const [authenticated, setAuthenticated] = useState(false);
   const { quill } = useQuill();
+  const auth = useAuth();
   const [text, setText] = useState(content);
   const router = useRouter();
 
   useEffect(() => {
+    setAuthenticated(auth.isAuth())
     if (quill) {
       quill.clipboard.dangerouslyPasteHTML(text);
       quill.on("text-change", () => {
@@ -39,9 +43,11 @@ const PostDetails = ({ data }) => {
             __html: text,
           }}
         />
-        <Link href={router.asPath + "/edit"}>
-          <button className={styles.editBtn}>Edit</button>
-        </Link>
+        {authenticated && (
+          <Link href={router.asPath + "/edit"}>
+            <button className={styles.editBtn}>Edit</button>
+          </Link>
+        )}
       </div>
     </div>
   );

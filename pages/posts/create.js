@@ -1,6 +1,7 @@
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import { useQuill } from "react-quilljs";
+import { useAuth } from "../../services/auth/useAuth";
 import http from "../../services/http/httpService";
 import styles from "../../styles/Create.module.css";
 
@@ -11,8 +12,10 @@ const CreatePost = () => {
   const [description, setDescription] = useState("");
   const [imageUrl, setImageUrl] = useState("");
   const router = useRouter();
+  const { checkAuth } = useAuth();
 
   useEffect(() => {
+    checkAuth();
     if (quill) {
       quill.clipboard.dangerouslyPasteHTML(text);
       quill.on("text-change", () => {

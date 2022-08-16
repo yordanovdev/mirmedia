@@ -4,10 +4,11 @@ import styles from "../../../styles/PostItemEdit.module.css";
 import createStyles from "../../../styles/Create.module.css";
 import http from "../../../services/http/httpService";
 import { useRouter } from "next/router";
+import { useAuth } from "../../../services/auth/useAuth";
 
 const EditPost = ({ data }) => {
   const { content, description, imageUrl, title } = data;
-
+  const { checkAuth } = useAuth();
   const { quill, quillRef } = useQuill();
   const [text, setText] = useState(content);
   const [titleText, setTitle] = useState(title);
@@ -16,6 +17,7 @@ const EditPost = ({ data }) => {
   const router = useRouter();
 
   useEffect(() => {
+    checkAuth();
     if (quill) {
       quill.clipboard.dangerouslyPasteHTML(text);
       quill.on("text-change", () => {
@@ -35,7 +37,6 @@ const EditPost = ({ data }) => {
       })
       .then(() => {
         router.back();
-        
       });
   };
 

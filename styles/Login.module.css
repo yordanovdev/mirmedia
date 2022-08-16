@@ -1,0 +1,45 @@
+.login {
+  display: grid;
+  place-content: center;
+  padding: 90px 0px;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 45px;
+}
+
+.input {
+  border: none;
+  border-bottom: 1px solid gray;
+  min-width: 300px;
+  font-size: 16px;
+  padding: 5px;
+  letter-spacing: 2px;
+}
+
+.input::placeholder {
+  font-size: 16px;
+}
+
+.input:hover {
+  outline: none;
+}
+
+.text {
+    text-align: center;
+}
+
+.btn {
+  border: none;
+  padding: 10px 30px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  font-size: 18px;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+
+  background: linear-gradient(45deg, #5e17eb, #ffe500);
+}
