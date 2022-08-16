@@ -69,8 +69,4 @@ const links = [
     text: "За нас",
     to: "/about-us",
   },
-  {
-    text: "Контакти",
-    to: "/contacts",
-  },
 ];

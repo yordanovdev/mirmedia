@@ -16,9 +16,9 @@ export default function Home({ data }) {
         <div className={styles.people}>
           <div className={styles.person}>
             <Image
-              src="/images/founder.jpeg"
+              src="/images/founder.png"
               width={300}
-              height={400}
+              height={390}
               alt="founder"
             />
             <h2>Боян Братанов</h2>
@@ -26,9 +26,9 @@ export default function Home({ data }) {
           </div>
           <div className={styles.person}>
             <Image
-              src="/images/co-founder.jpeg"
+              src="/images/co-founder.png"
               width={300}
-              height={400}
+              height={390}
               alt="founder"
             />
             <h2>Unknown Human Being</h2>
