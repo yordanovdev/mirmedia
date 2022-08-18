@@ -3,6 +3,7 @@ import http from "../../../services/http/httpService";
 import { useQuill } from "react-quilljs";
 import styles from "../../../styles/PostDetails.module.css";
 import { useRouter } from "next/router";
+import Head from "next/head";
 import Link from "next/link";
 import { useAuth } from "../../../services/auth/useAuth";
 
@@ -15,7 +16,7 @@ const PostDetails = ({ data }) => {
   const router = useRouter();
 
   useEffect(() => {
-    setAuthenticated(auth.isAuth())
+    setAuthenticated(auth.isAuth());
     if (quill) {
       quill.clipboard.dangerouslyPasteHTML(text);
       quill.on("text-change", () => {
@@ -26,6 +27,7 @@ const PostDetails = ({ data }) => {
 
   return (
     <div className={styles.post}>
+      <RenderHead data={data} />
       <div className={styles.main}>
         <img src={imageUrl ?? ""} alt={title} className={styles.image} />
         <h1 className={styles.title}>{title}</h1>
@@ -50,6 +52,20 @@ const PostDetails = ({ data }) => {
         )}
       </div>
     </div>
+  );
+};
+
+const RenderHead = ({ data }) => {
+  return (
+    <Head>
+      <meta property="og:image" content={data.imageUrl ?? ""} />
+      <meta property="og:image:secure_url" content={data.imageUrl ?? ""} />
+      <meta property="og:image:type" content="image/jpeg" />
+      <meta property="og:image:width" content="400" />
+      <meta property="og:image:height" content="300" />
+      <meta property="og:image:alt" content={data.description} />
+      <meta property="og:title" content={data.title} />
+    </Head>
   );
 };
 
