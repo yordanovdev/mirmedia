@@ -67,7 +67,9 @@ const RenderHead = ({ data }) => {
       <meta property="og:title" content={data.title} />
       <meta property="og:description" content={data.description} />
       <meta property="og:type" content="article" />
-      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content={data.title} />
+      <meta name="twitter:description" content={data.description} />
     </Head>
   );
 };
