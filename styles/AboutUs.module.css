@@ -22,10 +22,12 @@
 
 .logo {
   width: fit-content;
+  height: fit-content;
   padding: 10px;
   height: 100%;
   background-color: rgb(46, 56, 68);
   padding-bottom: 0px;
+  object-fit: none;
 }
 
 .text {
