@@ -65,6 +65,7 @@ const RenderHead = ({ data }) => {
       <meta property="og:image:height" content="300" />
       <meta property="og:image:alt" content={data.description} />
       <meta property="og:title" content={data.title} />
+      <meta property="og:description" content={data.description} />
     </Head>
   );
 };
