@@ -16,8 +16,7 @@ function App({ Component, pageProps }) {
 const RenderHead = () => {
   return (
     <Head>
-      <meta property="og:image" content="<%= require('./images/logo.png') %>" />
-      <meta property="og:image:alt" content={"logo"} />
+      <meta property="og:image" content="https://mirmedia.vercel.app/images/logo.png" />
       <meta property="og:title" content={"Mir Media"} />
       <meta
         property="og:description"
