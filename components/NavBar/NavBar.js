@@ -3,14 +3,23 @@ import Image from "next/image";
 import styles from "../../styles/NavBar.module.css";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { useAuth } from "../../services/auth/useAuth";
 
 const NavBar = () => {
   const [open, setOpen] = useState(false);
+  const [authenticated, setAuthenticated] = useState(false);
   const router = useRouter();
+  const auth = useAuth();
 
   useEffect(() => {
+    setAuthenticated(auth.isAuth());
     setOpen(false);
   }, [router.pathname]);
+
+  const handleLogout = () => {
+    localStorage.removeItem("accessToken");
+    window.location.reload();
+  };
 
   return (
     <div className={styles.navbar}>
@@ -43,6 +52,18 @@ const NavBar = () => {
             </Link>
           ))}
         </div>
+        {authenticated && (
+          <div className={styles.actions}>
+            <button
+              className={styles.volunteerBtn}
+              onClick={handleLogout}
+              style={{ backgroundColor: "blue" }}
+            >
+              Logout
+            </button>
+          </div>
+        )}
+
         <div className={styles.actions}>
           <button className={styles.volunteerBtn}>Стани Член</button>
         </div>
