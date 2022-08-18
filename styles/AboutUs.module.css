@@ -1,56 +1,54 @@
-.aboutUs {
-  background-color: #ebebeb;
-  padding: 20px;
+.main {
+  padding: 40px;
+  background-image: url("https://promeni.bg/wp-content/uploads/2021/10/bg-big.svg?id=273");
 }
 
-.main {
-  background-color: white;
-  border-radius: 8px;
-  padding: 30px;
+.aboutUs {
   display: flex;
-  flex-direction: column;
   gap: 50px;
+  align-items: center;
+  flex-direction: column;
 }
 
 .section {
   display: grid;
-  align-items: center;
+  padding: 40px 0px;
+  grid-template-columns: 1.7fr 1fr;
 }
 
-.section:nth-child(1) {
-  grid-template-columns: 1fr 3fr;
-}
-
-.section:nth-child(2) {
-  grid-template-columns: 3fr 1fr;
+.section:last-child {
+  grid-template-columns: 1fr 1.7fr;
 }
 
 .logo {
+  width: fit-content;
+  padding: 10px;
+  height: 100%;
+  background-color: rgb(46, 56, 68);
+  padding-bottom: 0px;
+}
+
+.text {
+  color: white;
+  width: 75%;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
+  gap: 30px;
+  letter-spacing: 1.3px;
+  text-align: center;
 }
 
-.logo img {
-  border-radius: 10px;
+.divider {
+  width: 100vw;
+  height: 70px;
+  background-color: white;
 }
 
-.blockquote {
-  background: #e1e1e1;
-  border-left: 10px solid #ccc;
-  margin: 1.5em 10px;
-  padding: 0.5em 10px;
-  quotes: "\201C""\201D""\2018""\2019";
+.textDivider {
+  height: 5px;
   border-radius: 5px;
-}
-.blockquote:before {
-  color: #ccc;
-  content: open-quote;
-  font-size: 4em;
-  line-height: 0.1em;
-  margin-right: 0.25em;
-  vertical-align: -0.4em;
-}
-.blockquote p {
-  display: inline;
+  background-color: white;
+  width: 50%;
 }

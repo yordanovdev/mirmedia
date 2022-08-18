@@ -4,42 +4,53 @@ import styles from "../../styles/AboutUs.module.css";
 
 const AboutUs = () => {
   return (
-    <div className={styles.aboutUs}>
-      <div className={styles.main}>
+    <div className={styles.main}>
+      <div className={styles.aboutUs}>
         <section className={styles.section}>
+          <div className={styles.text}>
+            <h1>Boqn Bratanov</h1>
+            <div className={styles.textDivider}></div>
+            <p>
+              Eu exercitation enim nulla elit sit elit.Aliquip reprehenderit
+              occaecat consectetur nostrud mollit sunt.Pariatur sit deserunt
+              ipsum aliquip magna.Irure nostrud sit consectetur aute mollit
+              labore incididunt laboris elit. Eu exercitation enim nulla elit
+              sit elit.Aliquip reprehenderit occaecat consectetur nostrud mollit
+              sunt.Pariatur sit deserunt ipsum aliquip magna.Irure nostrud sit
+              consectetur aute mollit labore incididunt laboris elit.
+            </p>
+          </div>
           <div className={styles.logo}>
             <Image
-              src={"/images/founder.jpeg"}
-              width={200}
-              height={200}
+              src={"/images/founder.png"}
+              width={350}
+              height={350}
               alt="logo"
             />
           </div>
-          <blockquote className={styles.blockquote}>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Earum,
-            accusamus incidunt fuga quos sit numquam quo dolor quod, saepe
-            dolores modi nihil voluptas? Voluptatum enim culpa vero eius commodi
-            laudantium reprehenderit, quam magni perspiciatis necessitatibus
-            laboriosam dolorem eligendi nobis officiis veritatis. Ex,
-            perspiciatis eum aliquam ullam delectus ipsam excepturi unde.
-          </blockquote>
         </section>
+        <div className={styles.divider}></div>
         <section className={styles.section}>
-          <blockquote className={styles.blockquote}>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Earum,
-            accusamus incidunt fuga quos sit numquam quo dolor quod, saepe
-            dolores modi nihil voluptas? Voluptatum enim culpa vero eius commodi
-            laudantium reprehenderit, quam magni perspiciatis necessitatibus
-            laboriosam dolorem eligendi nobis officiis veritatis. Ex,
-            perspiciatis eum aliquam ullam delectus ipsam excepturi unde.
-          </blockquote>
           <div className={styles.logo}>
             <Image
-              src={"/images/co-founder.jpeg"}
-              width={200}
-              height={200}
+              src={"/images/co-founder.png"}
+              width={350}
+              height={350}
               alt="logo"
             />
+          </div>
+          <div className={styles.text}>
+            <h1>Boqn Bratanov</h1>
+            <div className={styles.textDivider}></div>
+            <p>
+              Eu exercitation enim nulla elit sit elit.Aliquip reprehenderit
+              occaecat consectetur nostrud mollit sunt.Pariatur sit deserunt
+              ipsum aliquip magna.Irure nostrud sit consectetur aute mollit
+              labore incididunt laboris elit. Eu exercitation enim nulla elit
+              sit elit.Aliquip reprehenderit occaecat consectetur nostrud mollit
+              sunt.Pariatur sit deserunt ipsum aliquip magna.Irure nostrud sit
+              consectetur aute mollit labore incididunt laboris elit.
+            </p>
           </div>
         </section>
       </div>
