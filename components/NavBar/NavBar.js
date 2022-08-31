@@ -54,6 +54,14 @@ const NavBar = () => {
         </div>
         {authenticated && (
           <div className={styles.actions}>
+            <Link href={"/posts/create"}>
+              <button
+                className={styles.volunteerBtn}
+                style={{ backgroundColor: "purple", marginRight: "15px" }}
+              >
+                Create Post
+              </button>
+            </Link>
             <button
               className={styles.volunteerBtn}
               onClick={handleLogout}

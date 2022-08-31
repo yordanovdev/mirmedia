@@ -1,6 +1,7 @@
 import MainLayout from "../components/Layout/MainLayout";
 import "../styles/globals.css";
 import "quill/dist/quill.snow.css";
+// import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import Head from "next/head";
 
 function App({ Component, pageProps }) {

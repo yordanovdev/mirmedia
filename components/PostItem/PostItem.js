@@ -9,7 +9,7 @@ const PostItem = ({
     <Link href={"/posts/" + id}>
       <div className={styles.main}>
         <img src={imageUrl ?? ""} alt="" />
-        <h2>{title?.substring(0, 70)}...</h2>
+        <h2>{title?.substring(0, 50)}...</h2>
         <p className={styles.dateTime}>
           <i className="fa-regular fa-clock"></i>
           {new Date(creationTime).toLocaleDateString()}
