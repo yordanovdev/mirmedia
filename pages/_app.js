@@ -9,8 +9,8 @@ function App({ Component, pageProps }) {
   const CustomHead = Component.Head ?? RenderHead;
   return (
     <Layout>
-      <Loading />
       <CustomHead />
+      <Loading />
       <RenderHead />
       <Component {...pageProps} />
     </Layout>
