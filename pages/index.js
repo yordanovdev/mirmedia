@@ -31,7 +31,7 @@ export default function Home({ data }) {
               height={390}
               alt="founder"
             />
-            <h2>Unknown Human Being</h2>
+            <h2>Иво Пейчев</h2>
             <h3>
               Co-Founder of MIRMEDIA.BG. Labore do Lorem pariatur voluptate
             </h3>
