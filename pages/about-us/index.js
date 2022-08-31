@@ -8,49 +8,31 @@ const AboutUs = () => {
       <div className={styles.aboutUs}>
         <section className={styles.section}>
           <div className={styles.text}>
-            <h1>Boqn Bratanov</h1>
+            <h1>Боян Братанов</h1>
             <div className={styles.textDivider}></div>
-            <p>
-              Eu exercitation enim nulla elit sit elit.Aliquip reprehenderit
-              occaecat consectetur nostrud mollit sunt.Pariatur sit deserunt
-              ipsum aliquip magna.Irure nostrud sit consectetur aute mollit
-              labore incididunt laboris elit. Eu exercitation enim nulla elit
-              sit elit.Aliquip reprehenderit occaecat consectetur nostrud mollit
-              sunt.Pariatur sit deserunt ipsum aliquip magna.Irure nostrud sit
-              consectetur aute mollit labore incididunt laboris elit.
-            </p>
+            <p>Founder</p>
           </div>
           <div className={styles.logo}>
-            <Image
+            <img
               src={"/images/founder.png"}
-              width={350}
-              height={350}
               alt="logo"
+              className={styles.img}
             />
           </div>
         </section>
         <div className={styles.divider}></div>
         <section className={styles.section}>
           <div className={styles.logo}>
-            <Image
+            <img
               src={"/images/co-founder.png"}
-              width={350}
-              height={350}
               alt="logo"
+              className={styles.img}
             />
           </div>
           <div className={styles.text}>
-            <h1>Boqn Bratanov</h1>
+            <h1>Иво Пейчев</h1>
             <div className={styles.textDivider}></div>
-            <p>
-              Eu exercitation enim nulla elit sit elit.Aliquip reprehenderit
-              occaecat consectetur nostrud mollit sunt.Pariatur sit deserunt
-              ipsum aliquip magna.Irure nostrud sit consectetur aute mollit
-              labore incididunt laboris elit. Eu exercitation enim nulla elit
-              sit elit.Aliquip reprehenderit occaecat consectetur nostrud mollit
-              sunt.Pariatur sit deserunt ipsum aliquip magna.Irure nostrud sit
-              consectetur aute mollit labore incididunt laboris elit.
-            </p>
+            <p>Co-Founder</p>
           </div>
         </section>
       </div>

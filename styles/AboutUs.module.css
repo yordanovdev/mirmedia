@@ -8,6 +8,7 @@
   display: flex;
   gap: 50px;
   align-items: center;
+  justify-content: center;
   flex-direction: column;
 }
 
@@ -23,12 +24,20 @@
 
 .logo {
   width: fit-content;
-  height: fit-content;
-  padding: 10px;
+  height: min-content;
   height: 100%;
-  background-color: rgb(46, 56, 68);
-  padding-bottom: 0px;
+  background-image: url("../public/images/profileBackground.png");
+  border-radius: 20px;
+  align-self: center;
   object-fit: none;
+}
+
+.img {
+  border-radius: 20px;
+  margin-bottom: -5px;
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
 }
 
 .text {
@@ -43,6 +52,15 @@
   text-align: center;
 }
 
+.text h1 {
+  font-size: 4rem;
+}
+
+.text p {
+  font-size: 2rem;
+  font-family: "Pacifico", cursive;
+}
+
 .divider {
   width: 100vw;
   height: 70px;
@@ -54,4 +72,19 @@
   border-radius: 5px;
   background-color: white;
   width: 50%;
+}
+
+@media only screen and (max-width: 1000px) {
+  .section {
+   display: flex; 
+   flex-direction: column;
+   gap: 30px
+  }
+  .section:last-child {
+    flex-direction: column-reverse;
+  }
+  .text {
+    text-align: center;
+    width: 100%;
+  }
 }
