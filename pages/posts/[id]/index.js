@@ -27,7 +27,7 @@ const PostDetails = ({ data }) => {
 
   return (
     <div className={styles.post}>
-      <RenderHead data={data} />
+      <RenderHeadPost data={data} />
       <div className={styles.main}>
         <img src={imageUrl ?? ""} alt={title} className={styles.image} />
         <h1 className={styles.title}>{title}</h1>
@@ -55,7 +55,7 @@ const PostDetails = ({ data }) => {
   );
 };
 
-const RenderHead = ({ data }) => {
+const RenderHeadPost = ({ data }) => {
   return (
     <Head>
       <meta property="og:image" content={data.imageUrl ?? ""} />
