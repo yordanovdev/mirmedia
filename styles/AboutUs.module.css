@@ -58,7 +58,7 @@
 
 .text p {
   font-size: 2rem;
-  /* font-family: "Pacifico", cursive; */
+  font-family: "League Spartan", sans-serif;
 }
 
 .divider {
@@ -76,9 +76,9 @@
 
 @media only screen and (max-width: 1000px) {
   .section {
-   display: flex; 
-   flex-direction: column;
-   gap: 30px
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
   }
   .section:last-child {
     flex-direction: column-reverse;
