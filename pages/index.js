@@ -45,7 +45,7 @@ export default function Home({ data }) {
 export async function getServerSideProps({ req, res }) {
   res.setHeader(
     "Cache-Control",
-    "public, s-maxage=10, stale-while-revalidate=59"
+    "public, s-maxage=600, stale-while-revalidate=59"
   );
   var result = await http.get("api/services/app/Posts/GetLatestPosts");
   var data = await result.data;
