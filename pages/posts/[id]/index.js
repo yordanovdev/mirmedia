@@ -55,8 +55,6 @@ const PostDetails = ({ data }) => {
   );
 };
 
-PostDetails.Head = RenderHeadPost;
-
 const RenderHeadPost = ({ data }) => {
   return (
     <Head>
@@ -75,6 +73,8 @@ const RenderHeadPost = ({ data }) => {
     </Head>
   );
 };
+
+PostDetails.Head = RenderHeadPost;
 
 export const getServerSideProps = async (context) => {
   const { id } = context.query;
