@@ -56,14 +56,14 @@ const NavBar = () => {
           <div className={styles.actions}>
             <Link href={"/posts/create"}>
               <button
-                className={styles.volunteerBtn}
+                className={`${styles.volunteerBtn} ${styles.createPost}`}
                 style={{ backgroundColor: "purple", marginRight: "15px" }}
               >
                 Create Post
               </button>
             </Link>
             <button
-              className={styles.volunteerBtn}
+              className={`${styles.volunteerBtn} ${styles.logoutBtn}`}
               onClick={handleLogout}
               style={{ backgroundColor: "blue" }}
             >

@@ -71,6 +71,7 @@
   letter-spacing: 1.4;
   text-transform: uppercase;
   font-weight: 400;
+  white-space: nowrap;
   cursor: pointer;
 }
 
@@ -91,7 +92,7 @@
   cursor: pointer;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 970px) {
   .openBtn {
     display: block;
   }
@@ -134,5 +135,31 @@
   .links p:hover {
     padding: 0;
     border: none;
+  }
+}
+
+@media screen and (max-width: 770px) {
+  .createPost {
+    display: none;
+  }
+  .logoutBtn {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .volunteerBtn {
+    padding: 5px 7px;
+  }
+
+  .navbar {
+    padding: 0px 5px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .navLogo {
+    max-width: 50px;
+    display: none;
   }
 }
