@@ -16,14 +16,16 @@ export default function Blog() {
   return (
     <div className={styles.main}>
       {data.length <= 0 && (
-        <RotatingLines
-          strokeColor="grey"
-          className={styles.spinner}
-          strokeWidth="5"
-          animationDuration="0.75"
-          width="96"
-          visible={data.length <= 0}
-        />
+        <div className={styles.spinnerWrap}>
+          <RotatingLines
+            strokeColor="grey"
+            className={styles.spinner}
+            strokeWidth="5"
+            animationDuration="0.75"
+            width="96"
+            visible={data.length <= 0}
+          />
+        </div>
       )}
       {data?.map((post) => (
         <PostItem key={post.id} data={post} />
