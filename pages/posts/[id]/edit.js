@@ -27,17 +27,21 @@ const EditPost = ({ data }) => {
   }, [quill]);
 
   const handleSave = () => {
-    http
-      .put("api/services/app/Posts/Update", {
-        ...data,
-        content: text,
-        title: titleText,
-        description: descriptionText,
-        imageUrl: imageUrlText,
-      })
-      .then(() => {
-        router.back();
-      });
+    if (!text || !titleText || !descriptionText || !imageUrlText)
+    {
+      return
+    }
+      http
+        .put("api/services/app/Posts/Update", {
+          ...data,
+          content: text,
+          title: titleText,
+          description: descriptionText,
+          imageUrl: imageUrlText,
+        })
+        .then(() => {
+          router.back();
+        });
   };
 
   return (
@@ -48,6 +52,7 @@ const EditPost = ({ data }) => {
           placeholder="Title"
           className={createStyles.input}
           value={titleText}
+          required={true}
           onChange={(e) => setTitle(e.target.value)}
         />
       </div>
@@ -58,6 +63,7 @@ const EditPost = ({ data }) => {
           placeholder="Description"
           className={createStyles.input}
           value={descriptionText}
+          required={true}
           onChange={(e) => setDescription(e.target.value)}
         />
       </div>
@@ -68,6 +74,7 @@ const EditPost = ({ data }) => {
           placeholder="Image url"
           className={createStyles.input}
           value={imageUrlText}
+          required={true}
           onChange={(e) => setImageUrl(e.target.value)}
         />
 
