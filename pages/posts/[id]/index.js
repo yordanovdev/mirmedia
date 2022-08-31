@@ -55,6 +55,8 @@ const PostDetails = ({ data }) => {
   );
 };
 
+PostDetails.Head = RenderHeadPost;
+
 const RenderHeadPost = ({ data }) => {
   return (
     <Head>

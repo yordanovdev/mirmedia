@@ -9,7 +9,7 @@ function App({ Component, pageProps }) {
   return (
     <Layout>
       <Loading />
-      <RenderHead />
+      {Component.Head ? <Component.Head /> : <RenderHead />}
       <Component {...pageProps} />
     </Layout>
   );
