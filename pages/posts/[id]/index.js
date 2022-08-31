@@ -75,10 +75,6 @@ const RenderHead = ({ data }) => {
 };
 
 export const getServerSideProps = async (context) => {
-  res.setHeader(
-    "Cache-Control",
-    "public, s-maxage=10, stale-while-revalidate=59"
-  );
   const { id } = context.query;
   const result = await http.get("api/services/app/Posts/Get", {
     params: { id },
