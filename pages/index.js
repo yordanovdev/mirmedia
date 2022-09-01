@@ -38,6 +38,9 @@ export default function Home({ data }) {
           </div>
         </div>
       </div>
+      <br />
+      <br />
+      <br />
     </div>
   );
 }

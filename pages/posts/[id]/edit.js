@@ -21,7 +21,7 @@ const EditPost = ({ data }) => {
     if (quill) {
       quill.clipboard.dangerouslyPasteHTML(text);
       quill.on("text-change", () => {
-        setText(quill.root.innerHTML); // Get text only
+        setText(quill.root.innerHTML); 
       });
     }
   }, [quill]);

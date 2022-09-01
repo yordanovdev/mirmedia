@@ -2,10 +2,14 @@
   display: flex;
   align-items: center;
   flex-direction: row;
-  justify-content: space-evenly;
-  background-color: black;
+  justify-content: space-around;
+  background-image: url("../public/images/footerBackground.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-top: 2px solid white;
   color: white;
-  padding: 40px 20px;
+  padding: 50px 20px;
 }
 
 .logoContainer {
@@ -13,18 +17,18 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 5px;
+  gap: 20px;
 }
 
 .logoContainer img {
-  width: 100px;
+  width: 150px;
 }
 
 .social-links a {
   display: inline-block;
   height: 40px;
   width: 40px;
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(202, 201, 201, 0.311);
   margin: 0 10px 10px 0;
   text-align: center;
   line-height: 40px;
@@ -42,6 +46,33 @@
   gap: 10px;
   flex-direction: column;
   max-width: 300px;
+}
+
+.quoteContainer h1 {
+  /* -webkit-text-stroke-width: 5px;
+  -webkit-text-stroke-color: rgba(0, 0, 0, 0.435); */
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+.rightSideContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  flex-direction: column;
+}
+
+.rightSideContainer button {
+  background-color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  color: black;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 1050px) {
