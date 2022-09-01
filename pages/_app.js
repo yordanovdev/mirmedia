@@ -6,13 +6,11 @@ import Head from "next/head";
 
 function App({ Component, pageProps }) {
   const Layout = Component.Layout ?? MainLayout;
-  const CustomHead = Component.Head ?? RenderHead;
   return (
     <Layout>
-      <CustomHead />
       <Loading />
-      <RenderHead />
       <Component {...pageProps} />
+      <RenderHead />
     </Layout>
   );
 }

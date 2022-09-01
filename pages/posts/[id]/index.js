@@ -58,6 +58,7 @@ const PostDetails = ({ data }) => {
 const RenderHeadPost = ({ data }) => {
   return (
     <Head>
+      <title>{data.title}</title>
       <meta property="og:image" content={data.imageUrl ?? ""} />
       <meta property="og:image:secure_url" content={data.imageUrl ?? ""} />
       <meta property="og:image:type" content="image/jpeg" />
@@ -73,8 +74,6 @@ const RenderHeadPost = ({ data }) => {
     </Head>
   );
 };
-
-PostDetails.Head = RenderHeadPost;
 
 export const getServerSideProps = async (context) => {
   const { id } = context.query;
