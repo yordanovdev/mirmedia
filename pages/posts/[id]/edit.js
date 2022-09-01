@@ -40,6 +40,9 @@ const EditPost = ({ data }) => {
       })
       .then(() => {
         router.back();
+      })
+      .catch(() => {
+        alert("There was an error with the request");
       });
   };
 
