@@ -20,7 +20,7 @@ const CustomEditor = ({ initialValue, editorRef }) => {
         ],
         toolbar:
           "undo redo | formatselect | " +
-          "bold italic backcolor | alignleft aligncenter " +
+          "bold italic backcolor forecolor | alignleft aligncenter " +
           "alignright alignjustify | bullist numlist outdent indent | " +
           "removeformat | help",
         content_style:
