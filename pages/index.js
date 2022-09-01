@@ -47,11 +47,21 @@ export async function getServerSideProps({ req, res }) {
     "Cache-Control",
     "public, s-maxage=600, stale-while-revalidate=59"
   );
-  var result = await http.get("api/services/app/Posts/GetLatestPosts");
-  var data = await result.data;
-  return {
-    props: {
-      data: data.result,
-    },
-  };
+  try {
+    var result = await http.get("api/services/app/Posts/GetLatestPosts");
+    var data = await result.data;
+
+    return {
+      props: {
+        data: data.result,
+      },
+    };
+  } catch (e) {
+    return {
+      redirect: {
+        destination: "500",
+        permanent: false,
+      },
+    };
+  }
 }

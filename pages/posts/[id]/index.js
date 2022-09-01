@@ -8,7 +8,7 @@ import Link from "next/link";
 import { useAuth } from "../../../services/auth/useAuth";
 
 const PostDetails = ({ data }) => {
-  const { title, creationTime, content, imageUrl } = data;
+  const { title, creationTime, content, imageUrl, id } = data;
   const [authenticated, setAuthenticated] = useState(false);
   const { quill } = useQuill();
   const auth = useAuth();
@@ -24,6 +24,22 @@ const PostDetails = ({ data }) => {
       });
     }
   }, [quill]);
+
+  const deletePost = () => {
+    var input = confirm("Are you sure you want to remove this post? ");
+    if (input) {
+      http
+        .delete("api/services/app/Posts/Delete", {
+          params: {
+            id,
+          },
+        })
+        .then(() => {
+          router.back();
+        });
+    } else {
+    }
+  };
 
   return (
     <div className={styles.post}>
@@ -45,10 +61,24 @@ const PostDetails = ({ data }) => {
             __html: text,
           }}
         />
+
         {authenticated && (
-          <Link href={router.asPath + "/edit"}>
-            <button className={styles.editBtn}>Edit</button>
-          </Link>
+          <React.Fragment>
+            <br />
+            <hr></hr>
+            <br />
+            <Link href={router.asPath + "/edit"}>
+              <button className={styles.editBtn}>Edit</button>
+            </Link>
+
+            <button
+              style={{ backgroundColor: "red" }}
+              className={styles.editBtn}
+              onClick={() => deletePost()}
+            >
+              Delete
+            </button>
+          </React.Fragment>
         )}
       </div>
     </div>

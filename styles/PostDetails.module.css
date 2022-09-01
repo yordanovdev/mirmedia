@@ -36,9 +36,12 @@
   font-weight: 500;
   cursor: pointer;
   font-size: 17px;
+  align-self: center;
   letter-spacing: 2px;
   padding: 5px 10px;
+  max-width: 50vw;
   border-radius: 5px;
+  width: 100%;
   border: none;
 }
 
