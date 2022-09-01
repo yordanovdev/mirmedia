@@ -9,11 +9,7 @@ function Loading() {
 
   useEffect(() => {
     const handleStart = (url) => url !== router.asPath && setLoading(true);
-    const handleComplete = (url) =>
-      url === router.asPath &&
-      setTimeout(() => {
-        setLoading(false);
-      }, 300);
+    const handleComplete = (url) => url === router.asPath && setLoading(false);
 
     router.events.on("routeChangeStart", handleStart);
     router.events.on("routeChangeComplete", handleComplete);
@@ -27,18 +23,18 @@ function Loading() {
   });
 
   return (
-    loading && (
+    loading ? (
       <div className="spinner-wrapper">
         <RotatingLines
           strokeColor="purple"
           strokeWidth="5"
           animationDuration="0.75"
           width="96"
-          visible={true}
+          visible={loading}
         />
       </div>
-    )
+    ) : <></>
   );
 }
 
-export default Loading
+export default Loading;

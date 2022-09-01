@@ -1,47 +1,46 @@
-import React, { useEffect, useState } from "react";
-import { useQuill } from "react-quilljs";
+import React, { useEffect, useRef, useState } from "react";
 import styles from "../../../styles/PostItemEdit.module.css";
 import createStyles from "../../../styles/Create.module.css";
 import http from "../../../services/http/httpService";
 import { useRouter } from "next/router";
 import { useAuth } from "../../../services/auth/useAuth";
+import { v4 as uuidv4 } from "uuid";
+import CustomEditor from "../../../components/Editor/Editor";
 
 const EditPost = ({ data }) => {
-  const { content, description, imageUrl, title } = data;
+  const { content, description, imageUrl, title, id } = data;
   const { checkAuth } = useAuth();
-  const { quill, quillRef } = useQuill();
   const [text, setText] = useState(content);
   const [titleText, setTitle] = useState(title);
   const [descriptionText, setDescription] = useState(description);
   const [imageUrlText, setImageUrl] = useState(imageUrl);
   const router = useRouter();
 
+  const editorRef = useRef(null);
+
   useEffect(() => {
     checkAuth();
-    if (quill) {
-      quill.clipboard.dangerouslyPasteHTML(text);
-      quill.on("text-change", () => {
-        setText(quill.root.innerHTML); 
-      });
-    }
-  }, [quill]);
+  }, []);
 
   const handleSave = () => {
-    if (!text || !titleText || !descriptionText || !imageUrlText)
-    {
-      return
+    if (!text || !titleText || !descriptionText || !imageUrlText) {
+      return;
     }
-      http
-        .put("api/services/app/Posts/Update", {
-          ...data,
-          content: text,
-          title: titleText,
-          description: descriptionText,
-          imageUrl: imageUrlText,
-        })
-        .then(() => {
-          router.back();
-        });
+    const dataUpdate = {
+      ...data,
+      id: id,
+      content: editorRef.current.getContent(),
+      title: titleText,
+      description: descriptionText,
+      imageUrl: imageUrlText,
+    };
+    http
+      .put("api/services/app/Posts/Update", {
+        ...dataUpdate,
+      })
+      .then(() => {
+        router.back();
+      });
   };
 
   return (
@@ -87,10 +86,7 @@ const EditPost = ({ data }) => {
           />
         )}
       </div>
-
-      <div style={{ width: "max-width", height: "fit-content" }}>
-        <div ref={quillRef} />
-      </div>
+      <CustomEditor initialValue={content} editorRef={editorRef} />
       <button className={styles.saveBtn} onClick={() => handleSave()}>
         Save
       </button>

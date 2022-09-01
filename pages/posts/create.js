@@ -1,28 +1,21 @@
 import { useRouter } from "next/router";
-import React, { useEffect, useState } from "react";
-import { useQuill } from "react-quilljs";
+import React, { useEffect, useRef, useState } from "react";
+import CustomEditor from "../../components/Editor/Editor";
 import { useAuth } from "../../services/auth/useAuth";
 import http from "../../services/http/httpService";
 import styles from "../../styles/Create.module.css";
 
 const CreatePost = () => {
-  const { quill, quillRef } = useQuill();
-  const [text, setText] = useState("");
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [imageUrl, setImageUrl] = useState("");
   const router = useRouter();
   const { checkAuth } = useAuth();
+  const editorRef = useRef(null);
 
   useEffect(() => {
     checkAuth();
-    if (quill) {
-      quill.clipboard.dangerouslyPasteHTML(text);
-      quill.on("text-change", () => {
-        setText(quill.root.innerHTML); // Get text only
-      });
-    }
-  }, [quill]);
+  }, []);
 
   const createPost = () => {
     http
@@ -30,7 +23,7 @@ const CreatePost = () => {
         title,
         description,
         imageUrl,
-        content: text,
+        content: editorRef.current.getContent(),
       })
       .then(() => {
         router.back();
@@ -80,18 +73,13 @@ const CreatePost = () => {
 
       <div className={styles.segment}>
         <h3>Content: </h3>
-        <div className={styles.ql}>
-          <div
-            ref={quillRef}
-            style={{ width: "max-width", minHeight: "200px" }}
-          />
-        </div>
+        <CustomEditor initialValue={""} editorRef={editorRef} />
       </div>
 
       <button
         className={styles.btn}
         onClick={createPost}
-        disabled={!title || !description || !imageUrl || !text}
+        disabled={!title || !description || !imageUrl}
       >
         Create
       </button>

@@ -8,9 +8,9 @@ function App({ Component, pageProps }) {
   const Layout = Component.Layout ?? MainLayout;
   return (
     <Layout>
-      <Loading />
       <Component {...pageProps} />
       <RenderHead />
+      {/* <Loading /> */}
     </Layout>
   );
 }
