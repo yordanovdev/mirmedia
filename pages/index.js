@@ -18,17 +18,20 @@ export default function Home({ data }) {
             <Image
               src="/images/founder.png"
               width={300}
-              height={390}
+              height={410}
               alt="founder"
             />
             <h2>Боян Братанов</h2>
             <h3>Founder of MIRMEDIA.BG. Ex tempor sit labore velit elit.</h3>
           </div>
+          <div className={styles.peopleLogo}>
+          <Image src={"/images/logo.png"} width="200" height="200"/>
+          </div>
           <div className={styles.person}>
             <Image
               src="/images/co-founder.png"
               width={300}
-              height={390}
+              height={410}
               alt="founder"
             />
             <h2>Иво Пейчев</h2>
