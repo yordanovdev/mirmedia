@@ -15,7 +15,7 @@ export default function Blog() {
 
   return (
     <div className={styles.main}>
-      {data.length <= 0 && (
+      {!data || data.length <= 0 ? (
         <div className={styles.spinnerWrap}>
           <RotatingLines
             strokeColor="grey"
@@ -23,13 +23,12 @@ export default function Blog() {
             strokeWidth="5"
             animationDuration="0.75"
             width="96"
-            visible={data.length <= 0}
+            visible={true}
           />
         </div>
+      ) : (
+        data.map((post) => <PostItem key={post.id} data={post} />)
       )}
-      {data?.map((post) => (
-        <PostItem key={post.id} data={post} />
-      ))}
     </div>
   );
 }
