@@ -146,7 +146,7 @@
 
 @media screen and (max-width: 770px) {
   .navbar {
-    padding: 12px 25px;
+    padding: 22px 25px;
   }
   .createPost {
     display: none;
