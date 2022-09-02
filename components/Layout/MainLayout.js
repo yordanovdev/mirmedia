@@ -11,7 +11,6 @@ const MainLayout = ({ children }) => {
       <br />
       <br />
       <br />
-      <br />
       <div className={styles.content}>{children}</div>
       <Footer />
     </div>
