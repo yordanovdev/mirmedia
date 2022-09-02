@@ -11,7 +11,9 @@ function App({ Component, pageProps }) {
   const Layout = Component.Layout ?? MainLayout;
 
   useEffect(() => {
-    window.scrollY(0);
+    if (window) {
+      window.scrollTo(0, 0);
+    }
   }, [router.asPath]);
   return (
     <Layout>
