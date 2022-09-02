@@ -14,7 +14,7 @@ const NavBar = () => {
   useEffect(() => {
     setAuthenticated(auth.isAuth());
     setOpen(false);
-  }, [router.pathname]);
+  }, [router.asPath]);
 
   const handleLogout = () => {
     localStorage.removeItem("accessToken");
