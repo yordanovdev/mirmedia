@@ -33,9 +33,9 @@
 }
 
 .navText h2 {
-  font-weight: 400;
+  font-weight: 500;
   font-size: 22px;
-  letter-spacing: 2px;
+  letter-spacing: 2.4px;
   cursor: pointer;
 }
 
@@ -55,7 +55,7 @@
 
 .links p:hover {
   padding: 36px 0px;
-  border-bottom: 4px solid #3f00d8;
+  border-bottom: 4px solid white; 
   border-radius: 2px;
 }
 
@@ -83,8 +83,9 @@
   display: none;
   border: none;
   cursor: pointer;
-  font-size: larger;
-  background-color: white;
+  font-size: x-large;
+  background-color: transparent;
+  color: white;
 }
 
 .closeBtn {
@@ -113,7 +114,8 @@
     width: 200px;
     color: white;
     padding: 20px 20px;
-    background-color: #3f00d8;
+    background-color: rgb(53, 64, 139);
+    border-left: 3px solid white;
     min-height: 100vh;
     height: 100%;
 
