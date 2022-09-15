@@ -11,7 +11,12 @@ export default function Document() {
         crossOrigin="anonymous"
         referrerpolicy="no-referrer"
       />
-      <link rel="shortcut icon" href="favicon/favicon.ico" type="image/x-icon" />
+      <link
+        rel="shortcut icon"
+        href="/favicon/favicon.ico"
+        type="image/x-icon"
+      />
+      <title>Mirmedia</title>
       <body>
         <Main />
         <NextScript />

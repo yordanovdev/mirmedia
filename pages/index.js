@@ -2,6 +2,7 @@ import PostItem from "../components/PostItem/PostItem";
 import http from "../services/http/httpService";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
+import Head from "next/head";
 
 export default function Home({ data }) {
   return (
@@ -12,32 +13,23 @@ export default function Home({ data }) {
         ))}
       </div>
       <div className={styles.aboutUs}>
-        <h1>Кои сме ние?</h1>
+        {/* <h1>Кои сме ние?</h1> */}
         <div className={styles.people}>
+          <div className={styles.peopleText}>
+            <h2>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+              Obcaecati blanditiis cum repudiandae. Lorem ipsum dolor, sit amet
+              consectetur adipisicing elit. Officia itaque quo ipsum.
+            </h2>
+          </div>
           <div className={styles.person}>
-            <Image
+            <img
               src="/images/founder.png"
-              width={300}
-              height={410}
+              width={400}
+              height={500}
               alt="founder"
             />
-            <h2>Боян Братанов</h2>
-            <h3>Founder of MIRMEDIA.BG. Ex tempor sit labore velit elit.</h3>
-          </div>
-          <div className={styles.peopleLogo}>
-          <Image src={"/images/logo.png"} width="200" height="200"/>
-          </div>
-          <div className={styles.person}>
-            <Image
-              src="/images/co-founder.png"
-              width={300}
-              height={410}
-              alt="founder"
-            />
-            <h2>Иво Пейчев</h2>
-            <h3>
-              Co-Founder of MIRMEDIA.BG. Labore do Lorem pariatur voluptate
-            </h3>
+            {/* <h2>Боян Братанов</h2> */}
           </div>
         </div>
       </div>

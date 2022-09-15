@@ -10,7 +10,7 @@ const Footer = () => {
         <p>Стани част от първата независима ученическа медия в България!</p>
       </div>
       <div className={styles.logoContainer}>
-        <img src="/images/logo.png" />
+        <img src="/images/logo.png" alt="logo" />
       </div>
       <div className={styles.rightSideContainer}>
         <div className={styles["social-links"]}>

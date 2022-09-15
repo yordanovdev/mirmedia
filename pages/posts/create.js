@@ -66,6 +66,7 @@ const CreatePost = () => {
             src={imageUrl}
             width={150}
             height={150}
+            alt="image"
             className={styles.preview}
           />
         )}

@@ -8,7 +8,7 @@ const PostItem = ({
   return (
     <Link href={"/posts/" + id}>
       <div className={styles.main}>
-        <img src={imageUrl ?? ""} alt="" />
+        <img src={imageUrl ?? ""} alt="something" />
         <h2>{title?.substring(0, 50)}...</h2>
         <p className={styles.dateTime}>
           <i className="fa-regular fa-clock"></i>

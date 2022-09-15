@@ -3,6 +3,7 @@ import Head from "next/head";
 const RenderHead = () => {
   return (
     <Head>
+      <title>Mirmedia</title>
       <meta
         property="og:image"
         content="https://mirmedia.vercel.app/images/logo.png"
