@@ -74,7 +74,7 @@ const NavBar = () => {
 
         <Link href={"/join-us"}>
           <div className={styles.actions}>
-            <button className={styles.volunteerBtn}>Стани Член</button>
+            <button className={styles.volunteerBtn}>Подай Сигнал</button>
           </div>
         </Link>
         <button onClick={() => setOpen(true)} className={styles.openBtn}>
