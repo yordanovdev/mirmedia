@@ -51,6 +51,13 @@ const NavBar = () => {
               <p className={styles.link}>{link.text}</p>
             </Link>
           ))}
+          {authenticated && (
+            <>
+              <Link href={"/signals/"}>
+                <p className={styles.link}>Signals</p>
+              </Link>
+            </>
+          )}
         </div>
         {authenticated && (
           <div className={styles.actions}>

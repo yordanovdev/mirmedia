@@ -1,21 +1,5 @@
-.joinUs {
-}
-
 .container {
-  display: grid;
-  grid-template-columns: 1.7fr 1fr;
-  justify-content: space-between;
   margin: 0px 0px;
-}
-
-.imageSection {
-  background-image: url("https://promeni.bg/wp-content/uploads/2021/10/bg-big.svg?id=273");
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  border-radius: 5px;
-  width: 100%;
 }
 
 .imageSection img {

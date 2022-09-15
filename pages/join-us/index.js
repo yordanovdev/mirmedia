@@ -1,5 +1,5 @@
-import Image from "next/image";
 import React, { useState } from "react";
+import httpService from "../../services/http/httpService";
 import { useForm } from "react-hook-form";
 import { RotatingLines } from "react-loader-spinner";
 import styles from "../../styles/JoinUs.module.css";
@@ -8,18 +8,37 @@ const JoinUs = () => {
   const [signalState, setSignalState] = useState("no");
   const { register, handleSubmit } = useForm();
   const onSubmit = (data) => {
+    if (!data.name || !data.email || !data.subject || !data.message) {
+      return;
+    }
     setSignalState("pending");
     console.log(data);
-    setTimeout(() => {
-      setSignalState("yes");
-    }, 3000);
+    httpService
+      .post("api/services/app/Signal/Create", {
+        name: data.name,
+        email: data.email,
+        subject: data.subject,
+        message: data.message,
+        subscribed: data.subscribed,
+      })
+      .then((res) => {
+        setSignalState("yes");
+      })
+      .catch((e) => {
+        setSignalState("error");
+      });
   };
+
   if (signalState == "yes") {
     return (
       <div className={styles.dataContainer}>
         <h1>Thanks for contributing to out community</h1>
       </div>
     );
+  } else if (signalState == "error") {
+    <div className={styles.dataContainer}>
+      <h1>Oops! There was an error with your request</h1>
+    </div>;
   } else if (signalState == "pending") {
     return (
       <div className={styles.dataContainer}>
@@ -72,7 +91,7 @@ const JoinUs = () => {
               ></textarea>
               <label>
                 <input type="checkbox" {...register("subscribed")} />
-                <p>Subscribe for our Newsletter</p>
+                <p>Абонирайте се за нашия бюлетин</p>
               </label>
             </div>
             <input
@@ -82,9 +101,6 @@ const JoinUs = () => {
               className={styles.inputSubmit}
             />
           </form>
-          <div className={styles.imageSection}>
-            <Image src={"/images/founder.png"} width="310" height="410" />
-          </div>
         </div>
       </div>
     );
