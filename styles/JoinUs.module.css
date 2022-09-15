@@ -1,0 +1,123 @@
+.joinUs {
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1.7fr 1fr;
+  justify-content: space-between;
+  margin: 0px 0px;
+}
+
+.imageSection {
+  background-image: url("https://promeni.bg/wp-content/uploads/2021/10/bg-big.svg?id=273");
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.imageSection img {
+  object-fit: none;
+  background-image: url("../public/images/profileBackground.png");
+  width: min-content;
+  height: min-content;
+  object-position: bottom;
+  border-radius: 20px;
+}
+
+.contactForm {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  padding: 40px 30px;
+  flex-direction: column;
+}
+
+.contactForm .inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.contactForm h1 {
+  color: #e74c3c;
+  text-transform: uppercase;
+  font-size: 28px;
+}
+
+.contactForm input,
+.textarea textarea {
+  border: 0;
+  outline: 0;
+  padding: 1em;
+  border-radius: 6px;
+  min-width: 300px;
+  display: block;
+  width: 100%;
+  margin-top: 1em;
+  font-family: "Merriweather", sans-serif;
+  box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.68);
+  resize: none;
+}
+
+.inputs input:focus,
+.textarea textarea:focus {
+  outline: 1px solid #e74c3c;
+}
+
+.textarea textarea {
+  height: 126px;
+}
+
+.contactForm .inputSubmit {
+  width: fit-content;
+  background-color: #e74c3c;
+  color: white;
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1000px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+  .imageSection {
+    display: none;
+  }
+}
+
+.textarea {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.textarea label {
+  display: flex;
+  gap: 9px;
+  align-items: center;
+}
+
+.textarea label input[type="checkbox"] {
+  min-width: 15px;
+  width: min-content;
+  transform: scale(1.3);
+  margin: 0%;
+  border: none;
+  background: transparent;
+  box-shadow: none;
+}
+
+.dataContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 40px 0px;
+  min-height: 50vh;
+}

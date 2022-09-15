@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 import styles from "../../styles/Footer.module.css";
 
@@ -16,7 +17,11 @@ const Footer = () => {
           <a href="#">
             <i className="fab fa-facebook-f"></i>
           </a>
-          <a href="https://www.youtube.com/channel/UC4Nh0CvW4V_LMpzzw3267rA" target="_blank" rel="noreferrer">
+          <a
+            href="https://www.youtube.com/channel/UC4Nh0CvW4V_LMpzzw3267rA"
+            target="_blank"
+            rel="noreferrer"
+          >
             <i className="fab fa-youtube"></i>
           </a>
           <a
@@ -27,9 +32,11 @@ const Footer = () => {
             <i className="fab fa-instagram"></i>
           </a>
         </div>
-        <div className={styles.rightSideSecondElement}>
-          <button>Подай сигнал</button>
-        </div>
+        <Link href={"/join-us"}>
+          <div className={styles.rightSideSecondElement}>
+            <button>Подай сигнал</button>
+          </div>
+        </Link>
       </div>
     </div>
   );

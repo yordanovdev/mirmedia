@@ -72,9 +72,11 @@ const NavBar = () => {
           </div>
         )}
 
-        <div className={styles.actions}>
-          <button className={styles.volunteerBtn}>Стани Член</button>
-        </div>
+        <Link href={"/join-us"}>
+          <div className={styles.actions}>
+            <button className={styles.volunteerBtn}>Стани Член</button>
+          </div>
+        </Link>
         <button onClick={() => setOpen(true)} className={styles.openBtn}>
           <i className="fa fa-bars" />
         </button>
