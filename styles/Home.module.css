@@ -2,6 +2,13 @@
   padding: 0 2rem;
 }
 
+.home {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
 .main {
   min-height: 100vh;
   padding: 4rem 0;
@@ -108,12 +115,30 @@
   margin-left: 0.5rem;
 }
 
+.news {
+  text-transform: uppercase;
+  color: rgba(57, 57, 57, 0.803);
+  cursor: pointer;
+  font-family: 'Roboto Slab', serif;
+}
+
+.seeMore {
+  text-transform: uppercase;
+  margin: 10px 70px 40px 0px;
+  cursor: pointer;
+  align-self: flex-end;
+  color: blue;
+  font-size: 21px;
+  font-weight: 600;
+  font-family: 'Roboto Slab', serif;
+}
+
 .posts {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   justify-content: center;
   gap: 20px;
-  padding: 80px 70px;
+  padding: 50px 70px;
 }
 
 @media (max-width: 600px) {
@@ -157,7 +182,7 @@
 
 .people {
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 3fr 1fr;
   align-items: center;
   justify-content: space-between;
   gap: 20%;
@@ -183,7 +208,8 @@
 
 .peopleText h2 {
   color: white;
-  width: 100%;
+  width: 130%;
+  font-weight: 400;
   line-height: 35px;
 }
 
@@ -211,5 +237,8 @@
     align-items: center;
     gap: 30px;
     justify-content: center;
+  }
+  .people h2 {
+    width: 100%;
   }
 }

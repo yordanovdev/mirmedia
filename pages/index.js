@@ -3,23 +3,31 @@ import http from "../services/http/httpService";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import Head from "next/head";
+import Link from "next/link";
 
 export default function Home({ data }) {
   return (
     <div className={styles.home}>
+      <br />
+      <br />
+      <h1 className={styles.news}>Последни Публикации</h1>
       <div className={styles.posts}>
         {data?.map((post) => (
           <PostItem key={post.id} data={post} />
         ))}
       </div>
+      <Link href={"/blog"}>
+        <p className={styles.seeMore}>Виж още</p>
+      </Link>
       <div className={styles.aboutUs}>
         {/* <h1>Кои сме ние?</h1> */}
         <div className={styles.people}>
           <div className={styles.peopleText}>
             <h2>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-              Obcaecati blanditiis cum repudiandae. Lorem ipsum dolor, sit amet
-              consectetur adipisicing elit. Officia itaque quo ipsum.
+              MIRMEDIA е първата независима ученическа медия в България, целяща
+              да ангажира младото поколение и всички будни граждани с наболелите
+              за обществото теми и проблеми, представяйки информацията през
+              призмата на независимата и обективна журналистика.
             </h2>
           </div>
           <div className={styles.person}>
