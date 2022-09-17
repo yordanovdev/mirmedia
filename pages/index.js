@@ -17,7 +17,7 @@ export default function Home({ data }) {
         ))}
       </div>
       <Link href={"/blog"}>
-        <p className={styles.seeMore}>Виж още</p>
+        <button className={styles.seeMore}>Виж още</button>
       </Link>
       <div className={styles.aboutUs}>
         {/* <h1>Кои сме ние?</h1> */}

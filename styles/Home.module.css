@@ -127,10 +127,14 @@
   margin: 10px 70px 40px 0px;
   cursor: pointer;
   align-self: flex-end;
-  color: blue;
+  color: white;
+  padding: 6px 9px;
+  border: none;
+  border-radius: 10px;
   font-size: 21px;
   font-weight: 600;
   font-family: 'Roboto Slab', serif;
+  background-color: blue;
 }
 
 .posts {
