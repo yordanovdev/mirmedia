@@ -16,6 +16,11 @@ export default function Document() {
         href="/favicon/favicon.ico"
         type="image/x-icon"
       />
+      <script
+        async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2490303194829969"
+        crossOrigin="anonymous"
+      ></script>
       <title>Mirmedia</title>
       <body>
         <Main />
