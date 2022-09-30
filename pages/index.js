@@ -32,7 +32,7 @@ export default function Home({ data }) {
           </div>
           <div className={styles.person}>
             <img
-              src="/images/founder.png"
+              src="/images/boyancostume2V2.png"
               width={400}
               height={500}
               alt="founder"
