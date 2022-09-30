@@ -163,10 +163,9 @@
   }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 450px) {
   .navLogo {
     max-width: 50px;
-    /* display: none; */
   }
   .btnSignal {
     display: none;
