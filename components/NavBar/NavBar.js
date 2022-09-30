@@ -80,7 +80,7 @@ const NavBar = () => {
         )}
 
         <Link href={"/join-us"}>
-          <div className={styles.actions}>
+          <div className={`${styles.actions} ${styles.btnSignal}`}>
             <button className={styles.volunteerBtn}>Подай Сигнал</button>
           </div>
         </Link>
