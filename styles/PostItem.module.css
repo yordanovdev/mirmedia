@@ -16,7 +16,7 @@
   border-radius: 5px;
   max-width: 380px;
   height: 250px;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .dateTime {
