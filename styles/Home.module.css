@@ -196,9 +196,10 @@
 }
 
 .person img {
-  /* /* border-radius: 5px; */
   object-fit: cover;
   object-position: top;
+  position: relative;
+  top: 3px;
   aspect-ratio: 9 / 16;
 }
 

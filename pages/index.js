@@ -37,7 +37,6 @@ export default function Home({ data }) {
               height={500}
               alt="founder"
             />
-            {/* <h2>Боян Братанов</h2> */}
           </div>
         </div>
       </div>

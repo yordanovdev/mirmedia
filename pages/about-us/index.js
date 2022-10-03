@@ -14,7 +14,7 @@ const AboutUs = () => {
           </div>
           <div className={styles.logo}>
             <img
-              src={"/images/boyancostume2V2.png"}
+              src={"/images/boyancostume2V2crop.png"}
               alt="logo"
               className={styles.img}
             />
