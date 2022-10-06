@@ -8,7 +8,7 @@ const CustomEditor = ({ initialValue, editorRef }) => {
       onInit={(evt, editor) => (editorRef.current = editor)}
       initialValue={initialValue}
       id="hello"
-      apiKey={key}
+      // apiKey={key}
       tinymceScriptSrc={"/tinymce/tinymce.min.js"}
       init={{
         height: 500,
