@@ -4,10 +4,12 @@ import CustomEditor from "../../components/Editor/Editor";
 import { useAuth } from "../../services/auth/useAuth";
 import http from "../../services/http/httpService";
 import styles from "../../styles/Create.module.css";
+import types from "../../types";
 
 const CreatePost = () => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
+  const [type, setType] = useState("");
   const [imageUrl, setImageUrl] = useState("");
   const router = useRouter();
   const { checkAuth } = useAuth();
@@ -51,6 +53,21 @@ const CreatePost = () => {
           className={styles.input}
           onChange={(e) => setDescription(e.target.value)}
         />
+      </div>
+      <div className={styles.segment}>
+        <h3>Type</h3>
+        <select
+          className={styles.selectType}
+          name="types"
+          required={true}
+          onChange={(e) => setType(e.target.value)}
+        >
+          {types.map((ty) => (
+            <option value={ty.name} key={ty.name}>
+              {ty.label}
+            </option>
+          ))}
+        </select>
       </div>
 
       <div className={styles.segment}>

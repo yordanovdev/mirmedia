@@ -107,4 +107,8 @@ const links = [
     text: "За нас",
     to: "/about-us",
   },
+  {
+    text: "Категории",
+    to: "/categories",
+  },
 ];

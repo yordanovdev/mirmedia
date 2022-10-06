@@ -1,0 +1,18 @@
+.container {
+    padding: 50px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.block {
+    border: 1px solid gray;
+    padding: 100px;
+    cursor: pointer;
+    background-size: cover;
+    color: white;
+    font-size: 1.8rem;
+    font-weight: 600;
+}

@@ -1,0 +1,20 @@
+.category {
+  padding: 40px;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  row-gap: 30px;
+}
+
+@media screen and (max-width: 950px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .container img {
+    width: 550px;
+  }
+}

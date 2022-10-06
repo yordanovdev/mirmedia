@@ -97,7 +97,7 @@
   cursor: pointer;
 }
 
-@media screen and (max-width: 970px) {
+@media screen and (max-width: 1300px) {
   .openBtn {
     display: block;
   }
@@ -163,7 +163,7 @@
   }
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 570px) {
   .navLogo {
     max-width: 50px;
   }

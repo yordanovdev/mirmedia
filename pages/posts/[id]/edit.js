@@ -6,11 +6,13 @@ import { useRouter } from "next/router";
 import { useAuth } from "../../../services/auth/useAuth";
 import { v4 as uuidv4 } from "uuid";
 import CustomEditor from "../../../components/Editor/Editor";
+import types from "../../../types";
 
 const EditPost = ({ data }) => {
-  const { content, description, imageUrl, title, id } = data;
+  const { content, description, imageUrl, title, id, type } = data;
   const { checkAuth } = useAuth();
   const [text, setText] = useState(content);
+  const [typeText, setTypeText] = useState(type);
   const [titleText, setTitle] = useState(title);
   const [descriptionText, setDescription] = useState(description);
   const [imageUrlText, setImageUrl] = useState(imageUrl);
@@ -23,16 +25,17 @@ const EditPost = ({ data }) => {
   }, []);
 
   const handleSave = () => {
-    if (!text || !titleText || !descriptionText || !imageUrlText) {
+    if (!text || !titleText || !descriptionText || !imageUrlText || !typeText) {
       return;
     }
     const dataUpdate = {
       ...data,
       id: id,
-      content: editorRef.current.getContent(),
+      content: editorRef.current?.getContent(),
       title: titleText,
       description: descriptionText,
       imageUrl: imageUrlText,
+      type: typeText,
     };
     http
       .put("api/services/app/Posts/Update", {
@@ -68,6 +71,22 @@ const EditPost = ({ data }) => {
           required={true}
           onChange={(e) => setDescription(e.target.value)}
         />
+      </div>
+      <div className={styles.segment}>
+        <h3>Type</h3>
+        <select
+          className={styles.selectType}
+          name="types"
+          defaultValue={typeText}
+          required={true}
+          onChange={(e) => setTypeText(e.target.value)}
+        >
+          {types.map((ty) => (
+            <option value={ty.name} key={ty.name}>
+              {ty.label}
+            </option>
+          ))}
+        </select>
       </div>
 
       <div className={createStyles.segment}>

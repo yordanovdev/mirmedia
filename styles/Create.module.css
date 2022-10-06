@@ -43,3 +43,9 @@
 .btn:hover {
   background-color: #4d0dcc;
 }
+
+.selectType {
+  padding: 5px 10px;
+  border-radius: 3px;
+  max-width: fit-content;
+}

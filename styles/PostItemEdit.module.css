@@ -16,3 +16,9 @@
   border-radius: 5px;
   border: none;
 }
+
+.selectType {
+  margin: 15px 0px 0px 0px;
+  padding: 5px 10px;
+  border-radius: 3px;
+}
