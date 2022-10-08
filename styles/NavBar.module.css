@@ -97,6 +97,20 @@
   cursor: pointer;
 }
 
+.categoryContainer {
+  width: 100vw;
+  position: fixed;
+  top: 95px;
+  z-index: 100;
+  background-image: url("../public/images/footerBackground.png");
+  padding: 20px;
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  color: white;
+  cursor: pointer;
+}
+
 @media screen and (max-width: 1300px) {
   .openBtn {
     display: block;
