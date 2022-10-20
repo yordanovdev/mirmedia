@@ -45,3 +45,10 @@
 .hr {
   margin: 15px 0px;
 }
+
+@media screen and (max-width: 770px) {
+  .post {
+    padding: 0px;
+    background-color: white;
+  }
+}
