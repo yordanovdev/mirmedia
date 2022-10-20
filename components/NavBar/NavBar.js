@@ -15,6 +15,7 @@ const NavBar = () => {
 
   useEffect(() => {
     setAuthenticated(auth.isAuth());
+    setCategoryOpen(false)
     setOpen(false);
   }, [router.asPath]);
 
