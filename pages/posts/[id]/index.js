@@ -1,15 +1,16 @@
 import React, { useEffect, useState } from "react";
 import http from "../../../services/http/httpService";
-import { useQuill } from "react-quilljs";
 import styles from "../../../styles/PostDetails.module.scss";
 import { useRouter } from "next/router";
 import Head from "next/head";
 import Link from "next/link";
 import { useAuth } from "../../../services/auth/useAuth";
+import { useForm } from "react-hook-form";
 
 const PostDetails = ({ data }) => {
-  const { title, creationTime, content, imageUrl, id, views } = data;
+  const { title, creationTime, content, imageUrl, id, views, comments } = data;
   const [authenticated, setAuthenticated] = useState(false);
+  const { register, handleSubmit, reset } = useForm();
   const router = useRouter();
   const auth = useAuth();
 
@@ -55,6 +56,17 @@ const PostDetails = ({ data }) => {
     day: "numeric",
   };
 
+  const onSubmit = (data) => {
+    data.id = id;
+    http
+      .get("api/services/app/Posts/CommentPost", {
+        ...data,
+      })
+      .then(() => {
+        reset({});
+      });
+  };
+
   return (
     <div className={styles.post}>
       <RenderHeadPost data={data} />
@@ -75,7 +87,7 @@ const PostDetails = ({ data }) => {
               </p>
               <p>
                 <i className="fa-regular fa-message"></i>
-                10
+                {comments?.length || 0}
               </p>
             </div>
           </div>
@@ -106,6 +118,32 @@ const PostDetails = ({ data }) => {
           </React.Fragment>
         )}
       </div>
+
+      <form
+        className={styles.writeCommentContainer}
+        onSubmit={handleSubmit(onSubmit)}
+      >
+        <h3>Напиши Коментар</h3>
+        <hr color="gray" size="1" />
+        <div className={styles.userInputs}>
+          <div className={styles.field}>
+            <label>Име</label>
+            <input name="name" {...register("name")} />
+          </div>
+
+          <div className={styles.field}>
+            <label>Email</label>
+            <input name="email" {...register("email")} />
+          </div>
+        </div>
+        <div className={styles.field}>
+          <label>Коментар</label>
+          <textarea name="comment" rows={12} {...register("content")} />
+        </div>
+        <button className={styles.submitBtn} type="submit">
+          Изпрати
+        </button>
+      </form>
     </div>
   );
 };
@@ -132,7 +170,7 @@ const RenderHeadPost = ({ data }) => {
 
 export const getServerSideProps = async (context) => {
   const { id } = context.query;
-  const result = await http.get("api/services/app/Posts/Get", {
+  const result = await http.get("api/services/app/Posts/GetSinglePost", {
     params: { id },
   });
   const data = result.data;
