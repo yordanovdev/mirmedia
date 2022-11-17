@@ -3,7 +3,7 @@
   padding: 30px;
   display: flex;
   flex-direction: column;
-  gap: 50px;
+  gap: 30px;
 
   .main {
     padding: 25px;
@@ -130,6 +130,28 @@
     font-weight: 600;
     max-width: 150px;
     cursor: pointer;
+  }
+}
+
+.comments {
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  border-radius: 9px;
+  background-color: white;
+
+  .comment {
+    background-color: rgba(228, 228, 228, 0.718);
+    padding: 5px 15px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    h4 {
+      font-weight: 500;
+    }
   }
 }
 

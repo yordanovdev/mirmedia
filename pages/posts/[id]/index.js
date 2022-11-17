@@ -144,6 +144,17 @@ const PostDetails = ({ data }) => {
           Изпрати
         </button>
       </form>
+
+      <div className={styles.comments}>
+        <h3>Коментари</h3>
+        <hr color="gray" size="1" />
+        {comments?.map((comment) => (
+          <div className={styles.comment} key={comment.id}>
+            <h4>{comment.name}</h4>
+            <p>{comment.content}</p>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
