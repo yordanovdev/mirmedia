@@ -90,7 +90,7 @@ const NavBar = () => {
               <button
                 className={`${styles.volunteerBtn} ${styles.logoutBtn}`}
                 onClick={handleLogout}
-                style={{ backgroundColor: "blue" }}
+                style={{ backgroundColor: "white", color: "black" }}
               >
                 Logout
               </button>

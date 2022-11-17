@@ -2,30 +2,34 @@
   padding: 10px;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 10px;
   max-width: 30vw;
   cursor: pointer;
-}
 
-.main h2 {
-  color: blue;
-  letter-spacing: 1.5px;
-}
+  h2 {
+    color: black;
+    font-weight: 500;
+  }
 
-.main img {
-  border-radius: 5px;
-  max-width: 380px;
-  height: 250px;
-  object-fit: contain;
-}
+  img {
+    border-radius: 3px;
+    max-width: 380px;
+    height: 250px;
+    object-fit: cover;
+    aspect-ratio: 16 / 9;
+  }
 
-.dateTime {
-  color: blue;
-  letter-spacing: 2px;
-}
+  .dateTime {
+    color: rgb(94, 94, 94);
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 2px;
 
-.dateTime i {
-  margin-right: 5px;
+    i {
+      color: black !important;
+      margin-right: 8px;
+    }
+  }
 }
 
 @media screen and (max-width: 950px) {

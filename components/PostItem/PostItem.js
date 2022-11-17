@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "../../styles/PostItem.module.css";
+import styles from "../../styles/PostItem.module.scss";
 import Link from "next/link";
 
 const PostItem = ({

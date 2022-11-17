@@ -1,6 +1,6 @@
 import Link from "next/link";
 import React from "react";
-import styles from "../../styles/Footer.module.css";
+import styles from "../../styles/Footer.module.scss";
 
 const Footer = () => {
   return (
@@ -11,6 +11,8 @@ const Footer = () => {
       </div>
       <div className={styles.logoContainer}>
         <img src="/images/logo.png" alt="logo" />
+        <h2>MIRMEDIA.BG</h2>
+        <p>Всички права запазени mirmedia.bg &copy; 2022</p>
       </div>
       <div className={styles.rightSideContainer}>
         <div className={styles["social-links"]}>
@@ -34,7 +36,7 @@ const Footer = () => {
         </div>
         <Link href={"/join-us"}>
           <div className={styles.rightSideSecondElement}>
-            <button>Подай сигнал</button>
+            <button>Подкрепи Ни</button>
           </div>
         </Link>
       </div>
