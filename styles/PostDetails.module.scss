@@ -1,0 +1,83 @@
+.post {
+  background-color: #ededed;
+  padding: 30px;
+
+  .main {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    border-radius: 9px;
+    background-color: white;
+
+    .postInfo {
+      position: relative;
+
+      .image {
+        height: 450px;
+        border-radius: 5px;
+        background-repeat: no-repeat !important;
+        background-size: cover !important;
+      }
+
+      .postInfoText {
+        position: absolute;
+        top: 80%;
+        padding: 10px 40px;
+        display: flex;
+        gap: 5px;
+        flex-direction: column;
+        transform: translateY(-50%);
+
+        .postDetails {
+          display: flex;
+          color: white;
+          gap: 10px;
+          align-items: center;
+
+          i {
+            color: white;
+            margin: 0px 5px;
+          }
+        }
+      }
+    }
+
+    .title {
+      color: #fff;
+      letter-spacing: 1.5px;
+      font-weight: 500;
+    }
+
+    .creationTime span {
+      color: #fff;
+      font-weight: 500;
+    }
+
+    .hr {
+      margin: 15px 0px;
+    }
+  }
+
+  .editBtn {
+    background-color: #031690;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+    font-size: 17px;
+    align-self: center;
+    letter-spacing: 2px;
+    padding: 5px 10px;
+    max-width: 50vw;
+    border-radius: 5px;
+    width: 100%;
+    border: none;
+  }
+}
+
+@media screen and (max-width: 770px) {
+  .post {
+    padding: 0px;
+    background-color: white;
+  }
+}

@@ -1,29 +1,27 @@
 import React, { useEffect, useState } from "react";
 import http from "../../../services/http/httpService";
 import { useQuill } from "react-quilljs";
-import styles from "../../../styles/PostDetails.module.css";
+import styles from "../../../styles/PostDetails.module.scss";
 import { useRouter } from "next/router";
 import Head from "next/head";
 import Link from "next/link";
 import { useAuth } from "../../../services/auth/useAuth";
 
 const PostDetails = ({ data }) => {
-  const { title, creationTime, content, imageUrl, id } = data;
+  const { title, creationTime, content, imageUrl, id, views } = data;
   const [authenticated, setAuthenticated] = useState(false);
-  const { quill } = useQuill();
-  const auth = useAuth();
-  const [text, setText] = useState(content);
   const router = useRouter();
+  const auth = useAuth();
 
   useEffect(() => {
     setAuthenticated(auth.isAuth());
-    if (quill) {
-      quill.clipboard.dangerouslyPasteHTML(text);
-      quill.on("text-change", () => {
-        setText(quill.root.innerHTML); // Get text only
-      });
-    }
-  }, [quill]);
+  }, [auth]);
+
+  useEffect(() => {
+    http
+      .post("api/services/app/Posts/ViewPost", {}, { params: { id } })
+      .then(() => {});
+  }, []);
 
   const deletePost = () => {
     var input = confirm("Are you sure you want to remove this post? ");
@@ -44,24 +42,48 @@ const PostDetails = ({ data }) => {
     }
   };
 
+  const imageStyles = {
+    background: `linear-gradient(to bottom, rgba(0,0,0,0) 20%, rgba(0,0,0,1)), url('${
+      imageUrl ?? ""
+    }')`,
+  };
+
+  var options = {
+    // weekday: "long",
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  };
+
   return (
     <div className={styles.post}>
       <RenderHeadPost data={data} />
       <div className={styles.main}>
-        <img src={imageUrl ?? ""} alt={title} className={styles.image} />
-        <h1 className={styles.title}>{title}</h1>
-
-        <p className={styles.creationTime}>
-          Published on{" "}
-          <span>{new Date(creationTime).toLocaleDateString()}</span>
-        </p>
-
-        <hr className={styles.hr} />
-
+        <div className={styles.postInfo}>
+          <div className={styles.image} style={imageStyles}></div>
+          <div className={styles.postInfoText}>
+            <h1 className={styles.title}>{title}</h1>
+            <div className={styles.postDetails}>
+              <p className={styles.creationTime}>
+                <span>
+                  {new Date(creationTime).toLocaleDateString("en-BG", options)}
+                </span>
+              </p>
+              <p>
+                <i className="fa-solid fa-eye"></i>
+                {views}
+              </p>
+              <p>
+                <i className="fa-regular fa-message"></i>
+                10
+              </p>
+            </div>
+          </div>
+        </div>
         <div
           className="ql-editor"
           dangerouslySetInnerHTML={{
-            __html: text,
+            __html: content,
           }}
         />
 
