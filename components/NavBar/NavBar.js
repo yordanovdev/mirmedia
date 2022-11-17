@@ -15,7 +15,7 @@ const NavBar = () => {
 
   useEffect(() => {
     setAuthenticated(auth.isAuth());
-    setCategoryOpen(false)
+    setCategoryOpen(false);
     setOpen(false);
   }, [router.asPath]);
 
@@ -46,6 +46,7 @@ const NavBar = () => {
           <Link href={"/"}>
             <div className={styles.navText}>
               <h2>MIRMEDIA.BG</h2>
+              <p>независими и обективни</p>
             </div>
           </Link>
         </div>
@@ -96,11 +97,11 @@ const NavBar = () => {
             </div>
           )}
 
-          <Link href={"/join-us"}>
+          {/* <Link href={"/join-us"}>
             <div className={`${styles.actions} ${styles.btnSignal}`}>
               <button className={styles.volunteerBtn}>Подай Сигнал</button>
             </div>
-          </Link>
+          </Link> */}
           <button onClick={() => setOpen(true)} className={styles.openBtn}>
             <i className="fa fa-bars" />
           </button>
@@ -125,7 +126,11 @@ export default NavBar;
 
 const links = [
   {
-    text: "Начало",
+    text: "Новини",
+    to: "/",
+  },
+  {
+    text: "Политика",
     to: "/",
   },
   {
@@ -133,11 +138,15 @@ const links = [
     to: "/blog",
   },
   {
-    text: "За нас",
+    text: "Екип",
     to: "/about-us",
   },
   {
     text: "Категории",
-    name: "category"
+    name: "/categories",
+  },
+  {
+    text: "Контакти",
+    to: "/contacts",
   },
 ];

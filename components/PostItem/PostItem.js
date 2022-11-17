@@ -14,7 +14,6 @@ const PostItem = ({
           <i className="fa-regular fa-clock"></i>
           {new Date(creationTime).toLocaleDateString()}
         </p>
-        <p>{description?.substring(0, 50)}...</p>
       </div>
     </Link>
   );

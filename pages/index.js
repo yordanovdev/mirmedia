@@ -1,7 +1,7 @@
 import PostItem from "../components/PostItem/PostItem";
 import http from "../services/http/httpService";
 import Image from "next/image";
-import styles from "../styles/Home.module.css";
+import styles from "../styles/Home.module.scss";
 import Head from "next/head";
 import Link from "next/link";
 
@@ -10,15 +10,17 @@ export default function Home({ data }) {
     <div className={styles.home}>
       <br />
       <br />
-      <h1 className={styles.news}>Последни Публикации</h1>
-      <div className={styles.posts}>
-        {data?.map((post) => (
-          <PostItem key={post.id} data={post} />
-        ))}
+      <div className={styles.mainPostsContainer}>
+        <h1 className={styles.news}>Последни Публикации</h1>
+        <div className={styles.posts}>
+          {data?.map((post) => (
+            <PostItem key={post.id} data={post} />
+          ))}
+        </div>
+        <Link href={"/blog"}>
+          <button className={styles.seeMore}>Виж още</button>
+        </Link>
       </div>
-      <Link href={"/blog"}>
-        <button className={styles.seeMore}>Виж още</button>
-      </Link>
       <div className={styles.aboutUs}>
         {/* <h1>Кои сме ние?</h1> */}
         <div className={styles.people}>
