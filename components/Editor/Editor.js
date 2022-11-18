@@ -22,7 +22,7 @@ const CustomEditor = ({ initialValue, editorRef }) => {
           "undo redo | formatselect | " +
           "bold italic backcolor forecolor | alignleft aligncenter " +
           "alignright alignjustify | bullist numlist outdent indent | " +
-          "removeformat | help",
+          "removeformat | image | help",
         content_style:
           "body { font-family:Helvetica,Arial,sans-serif; font-size:14px }",
       }}
