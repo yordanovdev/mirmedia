@@ -1,41 +1,67 @@
 import Image from "next/image";
 import React from "react";
-import styles from "../../styles/AboutUs.module.css";
+import styles from "../../styles/AboutUs.module.scss";
+
+const data = [
+  {
+    image: "/images/boyancostume2V2crop.png",
+    name: "Боян Братанов",
+    role: "founder",
+    socials: [
+      {
+        icon: "fab fa-instagram",
+        url: "https://www.instagram.com/boyan.bratanov/",
+      },
+    ],
+  },
+  {
+    image: "/images/co-founder.png",
+    name: "Иво Пейчев",
+    role: "co-founder",
+    socials: [
+      {
+        icon: "fab fa-instagram",
+        url: "https://www.instagram.com/boyan.bratanov/",
+      },
+    ],
+  },
+];
 
 const AboutUs = () => {
   return (
     <div className={styles.main}>
-      <div className={styles.aboutUs}>
-        <section className={styles.section}>
-          <div className={styles.text}>
-            <h1>Боян Братанов</h1>
-            <div className={styles.textDivider}></div>
-            <p>Founder</p>
-          </div>
-          <div className={styles.logo}>
-            <img
-              src={"/images/boyancostume2V2crop.png"}
-              alt="logo"
-              className={styles.img}
-            />
-          </div>
-        </section>
-        <div className={styles.divider}></div>
-        <section className={styles.section}>
-          <div className={styles.logo}>
-            <img
-              src={"/images/co-founder.png"}
-              alt="logo"
-              className={styles.img}
-            />
-          </div>
-          <div className={styles.text}>
-            <h1>Иво Пейчев</h1>
-            <div className={styles.textDivider}></div>
-            <p>Co-Founder</p>
-          </div>
-        </section>
-      </div>
+      <section className={styles.team}>
+        <h1>Meet our team</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, nam
+        </p>
+        <div className={styles.people}>
+          {data.map((person) => (
+            <div className={styles.person} key={person.name}>
+              <img src={person.image} alt={person.name} />
+              <div className={styles.personInfo}>
+                <div className={styles.info}>
+                  <h3>{person.name}</h3>
+                  <p>{person.role}</p>
+                </div>
+
+                <div className={styles.socials}>
+                  {person.socials.map((link) => (
+                    <a
+                      key={link.url}
+                      href={link.url}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <i className={link.icon}></i>
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
     </div>
   );
 };

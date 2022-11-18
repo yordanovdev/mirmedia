@@ -1,0 +1,92 @@
+.main {
+  .team {
+    padding: 80px 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgba(218, 218, 218, 0.733);
+    gap: 25px;
+
+    h1 {
+      font-size: 35px;
+    }
+
+    .people {
+      display: flex;
+      gap: 20px;
+
+      .person {
+        background-color: white;
+        border-radius: 2px;
+        width: 300px;
+        height: 350px;
+        position: relative;
+
+        &:hover {
+          img {
+            filter: blur(2px) brightness(90%);
+          }
+          .personInfo {
+            bottom: 0%;
+            background-color: rgb(36, 23, 111);
+          }
+        }
+
+        img {
+          height: 100%;
+          width: 100%;
+          filter: none;
+          transition: 700ms ease-in-out;
+          object-fit: cover;
+        }
+
+        .personInfo {
+          border-bottom-left-radius: 5px;
+          border-bottom-right-radius: 5px;
+          position: absolute;
+          transition: all 700ms ease-in-out;
+          bottom: -10%;
+          padding: 10px 5px;
+          background-color: rgb(49, 9, 158);
+          width: 100%;
+          text-align: center;
+          display: flex;
+          flex-direction: column;
+          gap: 7px;
+          color: white;
+
+          .socials {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+
+            a {
+              display: flex;
+              height: 40px;
+              width: 40px;
+              align-items: center;
+              justify-content: center;
+              background-color: rgba(202, 201, 201, 0.311);
+              margin: 0 10px 10px 0;
+              text-align: center;
+              line-height: 40px;
+              border-radius: 50%;
+              color: #ffffff;
+              transition: all 0.5s ease;
+
+              &:hover {
+                color: #24262b;
+                background-color: #ffffff;
+              }
+            }
+
+            i {
+              font-size: 25px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
