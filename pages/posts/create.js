@@ -20,11 +20,13 @@ const CreatePost = () => {
   }, []);
 
   const createPost = () => {
+    const typeKey = type || types[0].name;
     http
       .post("api/services/app/Posts/Create", {
         title,
         description,
         imageUrl,
+        type: typeKey,
         content: editorRef.current.getContent(),
       })
       .then(() => {

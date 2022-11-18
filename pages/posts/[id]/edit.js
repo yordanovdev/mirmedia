@@ -35,7 +35,7 @@ const EditPost = ({ data }) => {
       title: titleText,
       description: descriptionText,
       imageUrl: imageUrlText,
-      type: typeText,
+      type: typeText || types[0].name,
     };
     http
       .put("api/services/app/Posts/Update", {

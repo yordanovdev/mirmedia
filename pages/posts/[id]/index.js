@@ -63,6 +63,7 @@ const PostDetails = ({ data }) => {
         ...data,
       })
       .then(() => {
+        router.replace(router.asPath);
         reset({});
       });
   };
@@ -179,12 +180,18 @@ const RenderHeadPost = ({ data }) => {
   );
 };
 
-export const getServerSideProps = async (context) => {
-  const { id } = context.query;
+const getData = async (id) => {
   const result = await http.get("api/services/app/Posts/GetSinglePost", {
     params: { id },
   });
   const data = result.data;
+
+  return data;
+};
+
+export const getServerSideProps = async (context) => {
+  const { id } = context.query;
+  const data = await getData(id);
   return {
     props: {
       data: data.result,
