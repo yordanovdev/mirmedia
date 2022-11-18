@@ -59,7 +59,7 @@ const PostDetails = ({ data }) => {
   const onSubmit = (data) => {
     data.id = id;
     http
-      .get("api/services/app/Posts/CommentPost", {
+      .post("api/services/app/Posts/CommentPost", {
         ...data,
       })
       .then(() => {
