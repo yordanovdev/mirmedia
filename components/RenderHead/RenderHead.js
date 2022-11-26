@@ -6,7 +6,7 @@ const RenderHead = () => {
       <title>Mirmedia</title>
       <meta
         property="og:image"
-        content="https://mirmedia.vercel.app/images/logo.png"
+        content="https://mirmedia.bg/images/logo.png"
       />
       <meta property="og:title" content={"Mir Media"} />
       <meta

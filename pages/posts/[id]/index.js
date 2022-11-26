@@ -15,14 +15,14 @@ const PostDetails = ({ data }) => {
   const auth = useAuth();
 
   useEffect(() => {
-    setAuthenticated(auth.isAuth());
-  }, [auth]);
-
-  useEffect(() => {
     http
       .post("api/services/app/Posts/ViewPost", {}, { params: { id } })
       .then(() => {});
   }, []);
+
+  useEffect(() => {
+    setAuthenticated(auth.isAuth());
+  }, [auth]);
 
   const deletePost = () => {
     var input = confirm("Are you sure you want to remove this post? ");
@@ -62,6 +62,16 @@ const PostDetails = ({ data }) => {
       .post("api/services/app/Posts/CommentPost", {
         ...data,
       })
+      .then(() => {
+        router.replace(router.asPath);
+        reset({});
+      });
+  };
+
+  const deleteComment = (id) => {
+    console.log(id);
+    http
+      .delete("api/services/app/Posts/DeleteComment", { params: { id } })
       .then(() => {
         router.replace(router.asPath);
         reset({});
@@ -151,6 +161,12 @@ const PostDetails = ({ data }) => {
         <hr color="gray" size="1" />
         {comments?.map((comment) => (
           <div className={styles.comment} key={comment.id}>
+            {authenticated && (
+              <i
+                className="fa fa-xmark"
+                onClick={() => deleteComment(comment.id)}
+              />
+            )}
             <h4>{comment.name}</h4>
             <p>{comment.content}</p>
           </div>

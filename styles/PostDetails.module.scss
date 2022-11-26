@@ -149,6 +149,17 @@
     flex-direction: column;
     gap: 5px;
 
+    position: relative;
+
+    i {
+      position: absolute;
+      right: -5px;
+      top: -5px;
+      font-size: 20px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
     h4 {
       font-weight: 500;
     }

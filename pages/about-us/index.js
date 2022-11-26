@@ -41,7 +41,8 @@ const AboutUs = () => {
               <img src={person.image} alt={person.name} />
               <div className={styles.personInfo}>
                 <div className={styles.info}>
-                  <h3>{person.name}</h3>
+                  <h3>{person.name}</h3>  
+                  <span>-</span>
                   <p>{person.role}</p>
                 </div>
 
