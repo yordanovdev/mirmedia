@@ -32,13 +32,7 @@ body {
 }
 
 .ql-editor {
-  padding: 0px !important;
-}
-
-.ql-editor img {
-  width: 400px;
-  height: 300px;
-  object-fit: contain;
+  padding: 20px !important;
 }
 
 .spinner-wrapper {

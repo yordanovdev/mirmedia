@@ -34,7 +34,7 @@ export default function Home({ data }) {
           </div>
           <div className={styles.person}>
             <img
-              src="/images/boyancostume2V2.png"
+              src="/images/boyanStandingPhoto.png"
               width={400}
               height={500}
               alt="founder"

@@ -11,7 +11,7 @@ const CustomEditor = ({ initialValue, editorRef }) => {
       apiKey={key}
       tinymceScriptSrc={"/tinymce/tinymce.min.js"}
       init={{
-        height: 500,
+        height: 600,
         menubar: false,
         plugins: [
           "advlist autolink lists link image charmap print preview anchor",
@@ -22,7 +22,7 @@ const CustomEditor = ({ initialValue, editorRef }) => {
           "undo redo | formatselect | " +
           "bold italic backcolor forecolor | alignleft aligncenter " +
           "alignright alignjustify | bullist numlist outdent indent | " +
-          "removeformat | image | help",
+          "removeformat | image | code | help",
         content_style:
           "body { font-family:Helvetica,Arial,sans-serif; font-size:14px }",
       }}

@@ -45,13 +45,13 @@
           position: absolute;
           transition: all 700ms ease-in-out;
           bottom: -10%;
-          padding: 10px 5px;
+          padding: 10px 5px 5px 5px;
           background-color: rgb(9, 59, 158);
           width: 100%;
           text-align: center;
           display: flex;
           flex-direction: column;
-          gap: 7px;
+          gap: 12px;
           color: white;
 
           .info {
@@ -59,7 +59,7 @@
             align-items: center;
             justify-content: center;
             gap: 5px;
-          
+
             p {
               font-style: italic;
             }
