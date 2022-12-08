@@ -1,6 +1,6 @@
 import PostItem from "../components/PostItem/PostItem";
 import http from "../services/http/httpService";
-import Image from "next/image";
+import layoutBg from "../public/images/homeSreenLayoutBackground.png";
 import styles from "../styles/Home.module.scss";
 import Head from "next/head";
 import Link from "next/link";
@@ -21,8 +21,10 @@ export default function Home({ data }) {
           <button className={styles.seeMore}>Виж още</button>
         </Link>
       </div>
-      <div className={styles.aboutUs}>
-        {/* <h1>Кои сме ние?</h1> */}
+      <div
+        className={styles.aboutUs}
+        style={{ backgroundImage: `url(${layoutBg.src})` }}
+      >
         <div className={styles.people}>
           <div className={styles.peopleText}>
             <h2>
