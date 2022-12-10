@@ -1,0 +1,66 @@
+.container {
+  .banner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 12px;
+
+    padding: 110px;
+    color: white;
+
+    font-size: 23px;
+  }
+
+  .contactContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 40px 50px;
+    color: rgb(114, 114, 114);
+
+    .contactLeft {
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      button {
+        max-width: 400px;
+        background-color: rgb(0, 81, 255);
+        padding: 10px 20px;
+        text-align: center;
+        color: white;
+        font-weight: 600;
+        font-size: larger;
+        border-radius: 5px;
+        border: none;
+        cursor: pointer;
+        letter-spacing: 1.1px;
+      }
+    }
+  }
+}
+
+.input,
+.textarea {
+  border: 0;
+  outline: 0;
+  padding: 1em;
+  border-radius: 6px;
+  max-width: 400px;
+  display: block;
+  width: 80%;
+  margin-top: 1em;
+  font-family: "Merriweather", sans-serif;
+  box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.68);
+  resize: none;
+}
+
+.inputs input:focus,
+.textarea:focus {
+  outline: 1px solid #e74c3c;
+}
+
+.textarea {
+  height: 126px;
+}

@@ -2,7 +2,6 @@ import PostItem from "../components/PostItem/PostItem";
 import http from "../services/http/httpService";
 import layoutBg from "../public/images/homeSreenLayoutBackground.png";
 import styles from "../styles/Home.module.scss";
-import Head from "next/head";
 import Link from "next/link";
 
 export default function Home({ data }) {
@@ -56,21 +55,12 @@ export async function getServerSideProps({ req, res }) {
     "Cache-Control",
     "public, s-maxage=600, stale-while-revalidate=59"
   );
-  try {
-    var result = await http.get("api/services/app/Posts/GetLatestPosts");
-    var data = await result.data;
+  var result = await http.get("api/services/app/Posts/GetLatestPosts");
+  var data = await result.data;
 
-    return {
-      props: {
-        data: data.result,
-      },
-    };
-  } catch (e) {
-    return {
-      redirect: {
-        destination: "500",
-        permanent: false,
-      },
-    };
-  }
+  return {
+    props: {
+      data: data.result,
+    },
+  };
 }
