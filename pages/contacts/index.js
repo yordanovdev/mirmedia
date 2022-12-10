@@ -16,6 +16,7 @@ const Contacts = () => {
       .then(
         (result) => {
           console.log(result.text);
+          form.current.reset();
         },
         (error) => {
           console.log(error.text);
@@ -40,18 +41,21 @@ const Contacts = () => {
             placeholder="First name"
             name="firstName"
             className={styles.input}
+            required={true}
           />
           <input
             type="text"
             placeholder="Last name"
             name="lastName"
             className={styles.input}
+            required={true}
           />
           <input
             type="text"
             placeholder="Email"
             name="email"
             className={styles.input}
+            required={true}
           />
           <textarea
             name="message"
@@ -59,6 +63,7 @@ const Contacts = () => {
             id="input-message"
             placeholder="Message"
             className={styles.textarea}
+            required={true}
           ></textarea>
           <button>Send</button>
         </form>
