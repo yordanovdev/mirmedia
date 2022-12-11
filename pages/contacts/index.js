@@ -29,12 +29,12 @@ const Contacts = () => {
         className={styles.banner}
         style={{ backgroundImage: `url(${layoutBg.src})` }}
       >
-        <h1>Contact us</h1>
+        <h1>Свържи се с нас</h1>
         <p>Lorem ipsum dolor sit amet.</p>
       </div>
       <div className={styles.contactContainer}>
         <form ref={form} className={styles.contactLeft} onSubmit={onSubmit}>
-          <h2>Reach out to us!</h2>
+          <h2>Свържи се с нас!</h2>
           <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
           <input
             type="text"

@@ -1,6 +1,6 @@
 import React, { Fragment, useEffect, useState } from "react";
 import Image from "next/image";
-import styles from "../../styles/NavBar.module.css";
+import styles from "../../styles/NavBar.module.scss";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useAuth } from "../../services/auth/useAuth";
@@ -34,12 +34,10 @@ const NavBar = () => {
         <div className={styles.leftSide}>
           <Link href={"/"}>
             <div className={styles.navLogo}>
-              <Image
+              <img
                 src="/images/logo.png"
                 alt="logo image"
                 className={styles.logo}
-                width={70}
-                height={70}
               />
             </div>
           </Link>
@@ -140,10 +138,6 @@ const links = [
   {
     text: "Екип",
     to: "/about-us",
-  },
-  {
-    text: "Категории",
-    name: "/categories",
   },
   {
     text: "Контакти",

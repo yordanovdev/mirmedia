@@ -6,8 +6,8 @@ const Footer = () => {
   return (
     <div className={styles.main}>
       <div className={styles.quoteContainer}>
-        <h1>Присъедини се!</h1>
-        <p>Стани част от първата независима ученическа медия в България!</p>
+        <h1>Подай сигнал!</h1>
+        <p>Подайте сигнал до нашата редакция!</p>
       </div>
       <div className={styles.logoContainer}>
         <img src="/images/logo.png" alt="logo" />

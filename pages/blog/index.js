@@ -37,6 +37,6 @@ async function getData() {
   var result = await http.get("api/services/app/Posts/GetAll");
   var data = await result.data;
   return {
-    data: data.result.items,
+    data: data.result.items.reverse(),
   };
 }

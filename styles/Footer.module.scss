@@ -1,12 +1,14 @@
+$baseColor: rgb(23, 23, 23);
+
 .main {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
   justify-content: space-around;
-  background-color: black;
+  background-color: $baseColor;
   border-top: 2px solid white;
   color: white;
-  padding: 10px 30px 20px 30px;
+  padding: 30px 20px;
 
   .quoteContainer {
     display: flex;
@@ -33,13 +35,15 @@
     gap: 10px;
 
     img {
-      width: 170px;
+      width: 70px;
+      transform: translateX(5px);
     }
     h1 {
       text-transform: uppercase;
     }
     p {
       color: rgb(157, 157, 157);
+      font-family: "Montserrat", sans-serif;
     }
   }
 
