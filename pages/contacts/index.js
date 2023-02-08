@@ -30,12 +30,12 @@ const Contacts = () => {
         style={{ backgroundImage: `url(${layoutBg.src})` }}
       >
         <h1>Свържи се с нас</h1>
-        <p>Lorem ipsum dolor sit amet.</p>
+        <p>Може да ни пишете за информация и идеи</p>
       </div>
       <div className={styles.contactContainer}>
         <form ref={form} className={styles.contactLeft} onSubmit={onSubmit}>
           <h2>Свържи се с нас!</h2>
-          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+          <p>Пишете ни за информация, идеи, критики и още</p>
           <input
             type="text"
             placeholder="First name"
@@ -67,7 +67,6 @@ const Contacts = () => {
           ></textarea>
           <button>Send</button>
         </form>
-        <div className={styles.contactRight}>Right</div>
       </div>
     </div>
   );

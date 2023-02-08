@@ -55,8 +55,8 @@ export async function getServerSideProps({ req, res }) {
     "Cache-Control",
     "public, s-maxage=600, stale-while-revalidate=59"
   );
-  var result = await http.get("api/services/app/Posts/GetLatestPosts");
-  var data = await result.data;
+  let result = await http.get("api/services/app/Posts/GetLatestPosts");
+  let data = await result.data;
 
   return {
     props: {

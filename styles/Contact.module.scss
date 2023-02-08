@@ -1,3 +1,4 @@
+
 .container {
   .banner {
     display: flex;
@@ -13,8 +14,9 @@
   }
 
   .contactContainer {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     padding: 40px 50px;
     color: rgb(114, 114, 114);
 
@@ -25,10 +27,11 @@
       gap: 20px;
 
       button {
-        max-width: 400px;
+        max-width: 650px;
         background-color: rgb(0, 81, 255);
         padding: 10px 20px;
         text-align: center;
+        width: 100%;
         color: white;
         font-weight: 600;
         font-size: larger;
@@ -47,9 +50,9 @@
   outline: 0;
   padding: 1em;
   border-radius: 6px;
-  max-width: 400px;
+  max-width: 650px;
   display: block;
-  width: 80%;
+  width: 100%;
   margin-top: 1em;
   font-family: "Merriweather", sans-serif;
   box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.68);
